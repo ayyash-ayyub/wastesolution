@@ -14,8 +14,12 @@ use App\Models\MasterLimbah;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return redirect()->route('login');
+});
+
+Route::get('/', function () {
+    return view('welcome');
 });
 
 // Auth routes

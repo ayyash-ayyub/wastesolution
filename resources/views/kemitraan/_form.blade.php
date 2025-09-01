@@ -66,8 +66,7 @@
             @if ($isEdit)
                 <a href="{{ route('master-kemitraan.index') }}" class="btn btn-secondary">Batal</a>
             @endif
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-success">Simpan</button>
         </div>
     </form>
 </div>
-

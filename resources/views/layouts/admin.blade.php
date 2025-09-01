@@ -10,12 +10,17 @@
     <!-- Daterangepicker CSS (global) -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <!-- Bootstrap JS will be loaded by AdminLTE bundle -->
+    <style>
+        .bg-deep-green { background-color: #1C4B41 !important; }
+        .navbar.bg-deep-green .nav-link, .navbar.bg-deep-green .navbar-brand, .navbar.bg-deep-green .navbar-text { color: #fff !important; }
+        .brand-link.bg-deep-green { color: #fff !important; }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-dark bg-deep-green">
         <!-- Left navbar -->
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -43,9 +48,9 @@
     </nav>
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#1C4B41;">
         <!-- Brand Logo -->
-        <a href="{{ route('dashboard') }}" class="brand-link text-center">
+        <a href="{{ route('dashboard') }}" class="brand-link text-center bg-deep-green">
             <span class="brand-text font-weight-light">Waste Management Sistem</span>
         </a>
 

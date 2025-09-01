@@ -62,7 +62,7 @@
             </div>
 
             <div class="form-group">
-                <label>Tonasi (dalam KG)</label>
+                <label>Tonasi (dalam Kg)</label>
                 <input type="number" step="0.01" min="0" name="tonasi" class="form-control" value="{{ $tonasiValue }}" placeholder="0.00" required>
             </div>
 
@@ -80,7 +80,7 @@
             @if ($isEdit)
                 <a href="{{ route('data-limbah.index') }}" class="btn btn-secondary">Batal</a>
             @endif
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-success">Simpan</button>
         </div>
     </form>
 </div>
