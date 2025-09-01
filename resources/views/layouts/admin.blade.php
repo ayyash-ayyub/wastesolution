@@ -51,7 +51,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#1C4B41;">
         <!-- Brand Logo -->
         <a href="{{ route('dashboard') }}" class="brand-link text-center bg-deep-green">
-            <span class="brand-text font-weight-light">Waste Management Sistem</span>
+            <span class="brand-text font-weight-light">Dahana WMS</span>
         </a>
 
         <!-- Sidebar -->
@@ -101,7 +101,13 @@
                             <p>Master Kemitraan</p>
                         </a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a href="{{ route('master-kajian.index') }}" class="nav-link {{ request()->routeIs('master-kajian.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-newspaper"></i>
+                            <p>Master Kajian</p>
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

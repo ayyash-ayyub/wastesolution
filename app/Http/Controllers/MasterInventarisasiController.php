@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class MasterInventarisasiController extends Controller
 {
-    private array $ujiOptions = ['Air', 'Udara', 'Tanah'];
     private array $kategoriFixed = ['B3', 'Non B3'];
 
     private function kategoriOptions(): array
@@ -48,11 +47,10 @@ class MasterInventarisasiController extends Controller
     public function index()
     {
         $items = MasterInventarisasi::orderByDesc('id')->get();
-        $ujiOptions = $this->ujiOptions;
         $kategoriOptions = $this->kategoriOptions();
         $subKategoriMap = $this->subKategoriMap();
         $tonaseMap = $this->tonaseBySubKategori();
-        return view('inventarisasi.index', compact('items', 'ujiOptions', 'kategoriOptions', 'subKategoriMap', 'tonaseMap'));
+        return view('inventarisasi.index', compact('items', 'kategoriOptions', 'subKategoriMap', 'tonaseMap'));
     }
 
     public function store(Request $request)
@@ -64,7 +62,6 @@ class MasterInventarisasiController extends Controller
         $validated = $request->validate([
             'kategori' => 'required|in:' . implode(',', $kategoriOptions),
             'sub_kategori' => 'nullable|string',
-            'uji_kualitas' => 'required|in:' . implode(',', $this->ujiOptions),
         ]);
 
         // Validate sub_kategori in map if available for selected kategori
@@ -79,8 +76,9 @@ class MasterInventarisasiController extends Controller
 
         // Compute tonase from DataLimbah sum by sub_kategori
         $key = $validated['sub_kategori'] ?? '__NULL__';
-        $tonase = (float) ($tonaseMap[$key] ?? 0);
-        $validated['tonase'] = $tonase;
+        // Source tonase assumed in Kg; convert to Ton for storage
+        $tonaseKg = (float) ($tonaseMap[$key] ?? 0);
+        $validated['tonase'] = $tonaseKg / 1000.0;
 
         MasterInventarisasi::create($validated);
         return redirect()->route('master-inventarisasi.index')->with('status', 'Data inventarisasi berhasil disimpan');
@@ -90,11 +88,10 @@ class MasterInventarisasiController extends Controller
     {
         $items = MasterInventarisasi::orderByDesc('id')->get();
         $editItem = $master_inventarisasi;
-        $ujiOptions = $this->ujiOptions;
         $kategoriOptions = $this->kategoriOptions();
         $subKategoriMap = $this->subKategoriMap();
         $tonaseMap = $this->tonaseBySubKategori();
-        return view('inventarisasi.index', compact('items', 'editItem', 'ujiOptions', 'kategoriOptions', 'subKategoriMap', 'tonaseMap'));
+        return view('inventarisasi.index', compact('items', 'editItem', 'kategoriOptions', 'subKategoriMap', 'tonaseMap'));
     }
 
     public function update(Request $request, MasterInventarisasi $master_inventarisasi)
@@ -106,7 +103,6 @@ class MasterInventarisasiController extends Controller
         $validated = $request->validate([
             'kategori' => 'required|in:' . implode(',', $kategoriOptions),
             'sub_kategori' => 'nullable|string',
-            'uji_kualitas' => 'required|in:' . implode(',', $this->ujiOptions),
         ]);
 
         $lookupKategori = $validated['kategori'];
@@ -119,8 +115,8 @@ class MasterInventarisasiController extends Controller
         }
 
         $key = $validated['sub_kategori'] ?? '__NULL__';
-        $tonase = (float) ($tonaseMap[$key] ?? 0);
-        $validated['tonase'] = $tonase;
+        $tonaseKg = (float) ($tonaseMap[$key] ?? 0);
+        $validated['tonase'] = $tonaseKg / 1000.0;
 
         $master_inventarisasi->update($validated);
         return redirect()->route('master-inventarisasi.index')->with('status', 'Data inventarisasi berhasil diperbarui');

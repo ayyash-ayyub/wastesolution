@@ -23,7 +23,7 @@
                                 <th>Kategori</th>
                                 <th>Sub Kategori</th>
                                 <th>Metode</th>
-                                <th>Tonasi</th>
+                                <th>Tonasi(Kg)</th>
                                 <th>Lokasi</th>
                                 <th style="width: 140px" class="text-right">Aksi</th>
                             </tr>

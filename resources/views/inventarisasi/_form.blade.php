@@ -47,18 +47,15 @@
             </div>
 
             <div class="form-group">
-                <label>Tonase (otomatis)</label>
+                <label>
+                    Tonase (otomatis) [Ton]
+                    <i class="fas fa-info-circle text-muted ml-1" data-toggle="tooltip" title="Nilai tonase ditampilkan dalam Ton (1 Ton = 1000 Kg) dan dihitung otomatis dari Data Limbah."></i>
+                </label>
                 <input type="text" name="tonase" id="tonase" class="form-control" value="{{ $tonaseValue }}" readonly>
+                <small id="tonase_kg_hint" class="form-text text-muted">&nbsp;</small>
             </div>
 
-            <div class="form-group">
-                <label>Uji Kualitas Lingkungan</label>
-                <select name="uji_kualitas" class="form-control" required>
-                    @foreach($ujiOptions as $opt)
-                        <option value="{{ $opt }}" {{ $ujiValue === $opt ? 'selected' : '' }}>{{ $opt }}</option>
-                    @endforeach
-                </select>
-            </div>
+            
         </div>
         <div class="card-footer text-right">
             @if ($isEdit)
@@ -80,7 +77,13 @@
         const list = invSubMap[kategori] || [];
         if (!list.length) {
             group.style.display = 'none';
-            document.getElementById('tonase').value = (invTonaseMap['__NULL__'] || 0).toFixed ? (invTonaseMap['__NULL__'] || 0).toFixed(2) : (invTonaseMap['__NULL__'] || 0);
+            // Convert Kg to Ton for display
+            const kg = Number(invTonaseMap['__NULL__'] || 0);
+            document.getElementById('tonase').value = (kg / 1000).toFixed(2);
+            const hint = document.getElementById('tonase_kg_hint');
+            if (hint) {
+                hint.textContent = `≈ ${kg.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2})} Kg`;
+            }
             return;
         }
         group.style.display = '';
@@ -100,9 +103,15 @@
     }
 
     function invUpdateTonase(sub) {
-        const val = invTonaseMap[sub || '__NULL__'] || 0;
+        const valKg = invTonaseMap[sub || '__NULL__'] || 0;
         const field = document.getElementById('tonase');
-        field.value = Number(val).toFixed ? Number(val).toFixed(2) : val;
+        const ton = Number(valKg) / 1000;
+        field.value = (isFinite(ton) ? ton : 0).toFixed(2);
+        const hint = document.getElementById('tonase_kg_hint');
+        if (hint) {
+            const kg = Number(valKg);
+            hint.textContent = `≈ ${kg.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2})} Kg`;
+        }
     }
 
     document.addEventListener('DOMContentLoaded', function(){
@@ -121,6 +130,11 @@
                 document.getElementById('subkategori_group').style.display = 'none';
                 invUpdateTonase('');
             }
+        }
+
+        // Initialize Bootstrap tooltip for info icon
+        if (typeof $ !== 'undefined' && $.fn.tooltip) {
+            $('[data-toggle="tooltip"]').tooltip();
         }
     });
 </script>

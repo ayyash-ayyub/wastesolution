@@ -9,8 +9,12 @@ use App\Http\Controllers\MasterLokasiController;
 use App\Http\Controllers\MasterPelaporanController;
 use App\Http\Controllers\MasterInventarisasiController;
 use App\Http\Controllers\MasterKemitraanController;
+use App\Http\Controllers\MasterKajianController;
 use App\Models\DataLimbah;
 use App\Models\MasterLimbah;
+use App\Models\MasterKemitraan;
+use App\Models\MasterKajian;
+use App\Models\MasterInventarisasi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -32,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         $jumlahLimbah = DataLimbah::count();
         $jumlahKategoriLimbah = MasterLimbah::query()->distinct('nama_kategori')->count('nama_kategori');
+        $totalKemitraan = MasterKemitraan::count();
+        $totalKajian = MasterKajian::count();
 
         $tonasePerKategori = DataLimbah::select('kategori_limbah', DB::raw('SUM(tonasi) as total'))
             ->groupBy('kategori_limbah')
@@ -60,13 +66,24 @@ Route::middleware('auth')->group(function () {
             ->orderBy('metode')
             ->get();
 
+        $invTonasePerSub = MasterInventarisasi::select(
+                'sub_kategori',
+                DB::raw('SUM(tonase) as total_ton')
+            )
+            ->groupBy('sub_kategori')
+            ->orderBy('sub_kategori')
+            ->get();
+
         return view('dashboard', compact(
             'jumlahLimbah',
             'jumlahKategoriLimbah',
             'tonasePerKategori',
             'tonasePerSubKategori',
             'tonasePerLokasi',
-            'metodePerKategoriSub'
+            'metodePerKategoriSub',
+            'invTonasePerSub',
+            'totalKemitraan',
+            'totalKajian'
         ));
     })->name('dashboard');
 
@@ -118,4 +135,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/master-kemitraan/{master_kemitraan}/edit', [MasterKemitraanController::class, 'edit'])->name('master-kemitraan.edit');
     Route::put('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'update'])->name('master-kemitraan.update');
     Route::get('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'show'])->name('master-kemitraan.show');
+
+    // Master Kajian CRUD
+    Route::get('/master-kajian', [MasterKajianController::class, 'index'])->name('master-kajian.index');
+    Route::post('/master-kajian', [MasterKajianController::class, 'store'])->name('master-kajian.store');
+    Route::get('/master-kajian/{master_kajian}/edit', [MasterKajianController::class, 'edit'])->name('master-kajian.edit');
+    Route::put('/master-kajian/{master_kajian}', [MasterKajianController::class, 'update'])->name('master-kajian.update');
+    Route::delete('/master-kajian/{master_kajian}', [MasterKajianController::class, 'destroy'])->name('master-kajian.destroy');
 });

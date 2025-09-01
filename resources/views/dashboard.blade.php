@@ -38,6 +38,32 @@
         </div>
     </div>
 
+    <div class="w-100 d-block d-xl-none"></div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body d-flex align-items-center">
+                <div class="mr-3 text-info" style="font-size:28px;"><i class="fas fa-handshake"></i></div>
+                <div>
+                    <div class="text-muted">Total Kemitraan</div>
+                    <div class="h4 mb-0">{{ $totalKemitraan ?? 0 }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3">
+        <div class="card">
+            <div class="card-body d-flex align-items-center">
+                <div class="mr-3 text-warning" style="font-size:28px;"><i class="fas fa-newspaper"></i></div>
+                <div>
+                    <div class="text-muted">Total Kajian</div>
+                    <div class="h4 mb-0">{{ $totalKajian ?? 0 }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="col-xl-6">
         <div class="card">
             <div class="card-header">
@@ -60,13 +86,24 @@
         </div>
     </div>
 
-    <div class="col-12">
+    <div class="col-xl-6">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title mb-0"><i class="fas fa-map-marker-alt mr-2"></i>Tonase per Lokasi</h3>
             </div>
             <div class="card-body">
                 <canvas id="chartTonaseLokasi" height="160"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title mb-0"><i class="fas fa-chart-bar mr-2"></i>Tonase Inventarisasi per Sub Kategori (Ton)</h3>
+            </div>
+            <div class="card-body">
+                <canvas id="chartInvTonaseSub" height="140"></canvas>
             </div>
         </div>
     </div>
@@ -106,6 +143,7 @@
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
 <script>
     (function(){
         const kategoriData = @json($tonasePerKategori ?? []);
@@ -122,10 +160,17 @@
         const dataLok = lokasiData.map(r => parseFloat(r.total || 0));
 
         const palette = ['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#14b8a6','#f43f5e','#84cc16','#eab308','#06b6d4'];
+        const invData = @json($invTonasePerSub ?? []);
+        const labelsInv = invData.map(r => r.sub_kategori || '-');
+        const dataInvTon = invData.map(r => parseFloat(r.total_ton || 0));
+        const dataInvKg = dataInvTon.map(t => t * 1000);
 
         function makePieChart(ctxId, labels, data){
             const ctx = document.getElementById(ctxId);
             if (!ctx) return;
+            if (typeof ChartDataLabels !== 'undefined') {
+                Chart.register(ChartDataLabels);
+            }
             new Chart(ctx, {
                 type: 'pie',
                 data: {
@@ -141,9 +186,17 @@
                     maintainAspectRatio: false,
                     plugins: {
                         legend: { display: true, position: 'bottom' },
+                        datalabels: {
+                            color: '#fff',
+                            formatter: (value, ctx) => {
+                                const v = Number(value || 0);
+                                return v.toLocaleString(undefined,{maximumFractionDigits:2}) + ' Ton';
+                            },
+                            font: { weight: 'bold' }
+                        },
                         tooltip: {
                             callbacks: {
-                                label: (ctx) => `${ctx.label}: ${ctx.formattedValue}`
+                                label: (ctx) => `${ctx.label}: ${ctx.formattedValue} Ton`
                             }
                         }
                     }
@@ -154,6 +207,9 @@
         function makeBarChart(ctxId, labels, data){
             const ctx = document.getElementById(ctxId);
             if (!ctx) return;
+            if (typeof ChartDataLabels !== 'undefined') {
+                Chart.register(ChartDataLabels);
+            }
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -167,7 +223,31 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
+                    plugins: {
+                        legend: { display: false },
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            clamp: true,
+                            formatter: (value, ctx) => {
+                                const v = Number(value || 0);
+                                const id = ctx && ctx.chart && ctx.chart.canvas ? ctx.chart.canvas.id : '';
+                                const unit = (id === 'chartInvTonaseSub') ? ' Ton' : ' Kg';
+                                return v.toLocaleString(undefined,{maximumFractionDigits:2}) + unit;
+                            }
+                        },
+                        tooltip: (ctxId === 'chartInvTonaseSub') ? {
+                            callbacks: {
+                                label: (ctx) => {
+                                    const ton = ctx.parsed.y ?? 0;
+                                    const kg = (ton * 1000);
+                                    const tonStr = ton.toLocaleString(undefined,{minimumFractionDigits:0, maximumFractionDigits:2});
+                                    const kgStr = kg.toLocaleString(undefined,{minimumFractionDigits:0, maximumFractionDigits:2});
+                                    return `${ctx.label}: ${tonStr} Ton (${kgStr} Kg)`;
+                                }
+                            }
+                        } : { }
+                    },
                     scales: {
                         x: { ticks: { autoSkip: true, maxRotation: 45, minRotation: 0 } },
                         y: { beginAtZero: true }
@@ -179,6 +259,10 @@
         makePieChart('chartTonaseKategori', labelsKat, dataKat);
         makeBarChart('chartTonaseSubKategori', labelsSub, dataSub);
         makePieChart('chartTonaseLokasi', labelsLok, dataLok);
+
+        // Inventarisasi bar chart (Ton)
+        makeBarChart('chartInvTonaseSub', labelsInv, dataInvTon);
+
     })();
 </script>
 @endsection

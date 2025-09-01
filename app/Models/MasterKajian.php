@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MasterInventarisasi extends Model
+class MasterKajian extends Model
 {
     use HasFactory;
 
-    protected $table = 'master_inventarisasi';
+    protected $table = 'master_kajian';
 
     protected $fillable = [
-        'kategori',
-        'sub_kategori',
-        'tonase',
+        'judul',
+        'penulis',
+        'resume',
+        'link_dokumen',
     ];
 }
