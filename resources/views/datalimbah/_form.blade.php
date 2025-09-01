@@ -62,7 +62,7 @@
             </div>
 
             <div class="form-group">
-                <label>Tonasi</label>
+                <label>Tonasi (dalam KG)</label>
                 <input type="number" step="0.01" min="0" name="tonasi" class="form-control" value="{{ $tonasiValue }}" placeholder="0.00" required>
             </div>
 

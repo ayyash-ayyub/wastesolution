@@ -84,6 +84,18 @@
                             <p>Master Pelaporan</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('master-inventarisasi.index') }}" class="nav-link {{ request()->routeIs('master-inventarisasi.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-clipboard-list"></i>
+                            <p>Master Inventarisasi</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('master-kemitraan.index') }}" class="nav-link {{ request()->routeIs('master-kemitraan.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-handshake"></i>
+                            <p>Master Kemitraan</p>
+                        </a>
+                    </li>
                     
                 </ul>
             </nav>

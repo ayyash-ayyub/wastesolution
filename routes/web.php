@@ -7,6 +7,11 @@ use App\Http\Controllers\DataLimbahController;
 use App\Http\Controllers\MasterMetodeController;
 use App\Http\Controllers\MasterLokasiController;
 use App\Http\Controllers\MasterPelaporanController;
+use App\Http\Controllers\MasterInventarisasiController;
+use App\Http\Controllers\MasterKemitraanController;
+use App\Models\DataLimbah;
+use App\Models\MasterLimbah;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
@@ -21,7 +26,44 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Dashboard (protected)
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $jumlahLimbah = DataLimbah::count();
+        $jumlahKategoriLimbah = MasterLimbah::query()->distinct('nama_kategori')->count('nama_kategori');
+
+        $tonasePerKategori = DataLimbah::select('kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->groupBy('kategori_limbah')
+            ->orderBy('kategori_limbah')
+            ->get();
+
+        $tonasePerSubKategori = DataLimbah::select('sub_kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->groupBy('sub_kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->get();
+
+        $tonasePerLokasi = DataLimbah::select('lokasi', DB::raw('SUM(tonasi) as total'))
+            ->groupBy('lokasi')
+            ->orderBy('lokasi')
+            ->get();
+
+        $metodePerKategoriSub = DataLimbah::select(
+                'kategori_limbah',
+                'sub_kategori_limbah',
+                'metode',
+                DB::raw('COUNT(*) as total')
+            )
+            ->groupBy('kategori_limbah', 'sub_kategori_limbah', 'metode')
+            ->orderBy('kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->orderBy('metode')
+            ->get();
+
+        return view('dashboard', compact(
+            'jumlahLimbah',
+            'jumlahKategoriLimbah',
+            'tonasePerKategori',
+            'tonasePerSubKategori',
+            'tonasePerLokasi',
+            'metodePerKategoriSub'
+        ));
     })->name('dashboard');
 
     // Master Limbah CRUD
@@ -58,4 +100,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/master-pelaporan/{master_pelaporan}/edit', [MasterPelaporanController::class, 'edit'])->name('master-pelaporan.edit');
     Route::put('/master-pelaporan/{master_pelaporan}', [MasterPelaporanController::class, 'update'])->name('master-pelaporan.update');
     Route::delete('/master-pelaporan/{master_pelaporan}', [MasterPelaporanController::class, 'destroy'])->name('master-pelaporan.destroy');
+
+    // Master Inventarisasi CRUD
+    Route::get('/master-inventarisasi', [MasterInventarisasiController::class, 'index'])->name('master-inventarisasi.index');
+    Route::post('/master-inventarisasi', [MasterInventarisasiController::class, 'store'])->name('master-inventarisasi.store');
+    Route::get('/master-inventarisasi/{master_inventarisasi}/edit', [MasterInventarisasiController::class, 'edit'])->name('master-inventarisasi.edit');
+    Route::put('/master-inventarisasi/{master_inventarisasi}', [MasterInventarisasiController::class, 'update'])->name('master-inventarisasi.update');
+    Route::delete('/master-inventarisasi/{master_inventarisasi}', [MasterInventarisasiController::class, 'destroy'])->name('master-inventarisasi.destroy');
+
+    // Master Kemitraan
+    Route::get('/master-kemitraan', [MasterKemitraanController::class, 'index'])->name('master-kemitraan.index');
+    Route::post('/master-kemitraan', [MasterKemitraanController::class, 'store'])->name('master-kemitraan.store');
+    Route::get('/master-kemitraan/{master_kemitraan}/edit', [MasterKemitraanController::class, 'edit'])->name('master-kemitraan.edit');
+    Route::put('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'update'])->name('master-kemitraan.update');
+    Route::get('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'show'])->name('master-kemitraan.show');
 });
