@@ -47,7 +47,55 @@
                 </div>
             </div>
         </div>
+
+        <!-- Map card -->
+        <div class="card mt-3">
+            <div class="card-header">
+                <h3 class="card-title mb-0">Peta Lokasi</h3>
+            </div>
+            <div class="card-body" style="height: 420px;">
+                <div id="lokasiMap" style="height: 100%; width: 100%; border-radius: 4px;"></div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
 
+@push('scripts')
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        const mapEl = document.getElementById('lokasiMap');
+        if (!mapEl) return;
+
+        const map = L.map('lokasiMap');
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+
+        const items = @json($items);
+        const bounds = [];
+        (items || []).forEach(it => {
+            const coordStr = (it.kordinat || '').trim();
+            if (!coordStr) return;
+            // Expected format: "lat,lon" (e.g., -6.2,106.8)
+            const parts = coordStr.split(',').map(s => s.trim());
+            if (parts.length !== 2) return;
+            const lat = parseFloat(parts[0]);
+            const lon = parseFloat(parts[1]);
+            if (!isFinite(lat) || !isFinite(lon)) return;
+            const marker = L.marker([lat, lon]).addTo(map);
+            marker.bindPopup(`<strong>${it.nama_site || 'Lokasi'}</strong><br/>${coordStr}`);
+            bounds.push([lat, lon]);
+        });
+
+        if (bounds.length) {
+            map.fitBounds(bounds, { padding: [20, 20] });
+        } else {
+            map.setView([-2.5489, 118.0149], 5); // Center over Indonesia as a neutral default
+        }
+    });
+</script>
+@endpush
