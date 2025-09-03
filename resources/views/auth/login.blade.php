@@ -41,7 +41,7 @@
                                     <label class="form-check-label" for="remember">Ingat saya</label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100 py-2">Masuk</button>
+                            <button type="submit" class="btn btn-success w-100 py-2">Masuk</button>
                         </form>
                     </div>
                 </div>

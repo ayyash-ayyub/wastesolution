@@ -22,8 +22,30 @@ Route::get('/login', function () {
     return redirect()->route('login');
 });
 
-Route::get('/', function () {
-    return view('welcome');
+// Frontend pages group
+Route::name('frontend.')->group(function () {
+    Route::get('/', function () {
+        $jumlahLimbah = DataLimbah::count();
+        $jumlahKategoriLimbah = MasterLimbah::query()->distinct('nama_kategori')->count('nama_kategori');
+        $totalKemitraan = MasterKemitraan::count();
+        $totalKajian = MasterKajian::count();
+        return view('frontend.index', compact('jumlahLimbah','jumlahKategoriLimbah','totalKemitraan','totalKajian'));
+    })->name('index');
+    Route::get('/index.html', fn() => view('frontend.index'));
+    Route::get('/about', fn() => view('frontend.about'))->name('about');
+    Route::get('/about.html', fn() => view('frontend.about'));
+    Route::get('/blog', fn() => view('frontend.blog'))->name('blog');
+    Route::get('/blog.html', fn() => view('frontend.blog'));
+    Route::get('/blog-single', fn() => view('frontend.blog-single'))->name('blog-single');
+    Route::get('/blog-single.html', fn() => view('frontend.blog-single'));
+    Route::get('/contact', fn() => view('frontend.contact'))->name('contact');
+    Route::get('/contact.html', fn() => view('frontend.contact'));
+    Route::get('/gallery', fn() => view('frontend.gallery'))->name('gallery');
+    Route::get('/gallery.html', fn() => view('frontend.gallery'));
+    Route::get('/projects', fn() => view('frontend.projects'))->name('projects');
+    Route::get('/projects.html', fn() => view('frontend.projects'));
+    Route::get('/team', fn() => view('frontend.team'))->name('team');
+    Route::get('/team.html', fn() => view('frontend.team'));
 });
 
 // Auth routes
