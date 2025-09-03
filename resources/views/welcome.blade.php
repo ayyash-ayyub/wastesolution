@@ -19,7 +19,7 @@
     @php
         $faLocal = file_exists(public_path('css/fontawesome.min.css')) &&
                    file_exists(public_path('css/brands.min.css')) &&
-                   file_exists(public_path('css/solid.min.css')); 
+                   file_exists(public_path('css/solid.min.css'));
         $icoLocal = file_exists(public_path('css/icofont.min.css'));
     @endphp
     @if($faLocal)
@@ -111,7 +111,7 @@
                                             <li><a href="faq.html">FAQ</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="projects.html">Projects</a></li>
+                                    {{-- <li><a class="menu-item" href="projects.html">Projects</a></li> --}}
                                     <li><a class="menu-item" href="#">Company</a>
                                         <ul>
                                             <li><a href="about.html">About Us</a></li>
@@ -119,14 +119,14 @@
                                             <li><a href="gallery.html">Gallery</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="blog.html">Blog</a></li>
+                                    <li><a class="menu-item" href="blog.html">Kajian</a></li>
                                     <li><a class="menu-item" href="contact.html">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    <a href="booking.html" class="btn-main">Schedule Pickup</a>
+                                    <a href="{{ url('/login') }}" class="btn-main">Login</a>
                                     <span id="menu-btn"></span>
                                 </div>
 
@@ -790,7 +790,7 @@
                         <div class="spacer-double"></div>
                         <div class="spacer-double"></div>
                         <div class="abs bottom-0">
-                            <h2 class="text-fit p-0 lh-1 op-2">wastewise</h2>
+                            <h2 class="text-fit p-0 lh-1 op-2">dahanawastesolution</h2>
                         </div>
                     </div>
                 </div>
