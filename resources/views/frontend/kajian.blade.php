@@ -136,7 +136,7 @@
                       <div class="col-lg-6 position-lg-absolute right-half h-100">
                         <div class="de-gradient-edge-top dark"></div>
                         <div class="image jarallax">
-                            <img src="images/background/11.webp" class="jarallax-img" alt="">
+                            <img src="images/banner2.webp" class="jarallax-img" alt="">
                         </div>
                       </div>
                       <!-- Text -->
@@ -180,7 +180,7 @@
                                                 <span class="fs-32">{{ optional($k->created_at)->format('d') }}</span>
                                                 <span class="d-block fs-16 text-uppercase">{{ optional($k->created_at)->format('M') }}</span>
                                             </div>
-                                            <img alt="" src="{{ asset('images/blog/1.webp') }}" class="hover-scale-1-1">
+                                            <img alt="" src="{{ asset('images/banner2.webp') }}" class="hover-scale-1-1">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -311,48 +311,7 @@
     </div>
 
 
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
-            <span></span>
-            <span></span>
-        </div>
 
-        <div id="extra-content">
-            <img src="images/logo-white.webp" class="w-150px" alt="">
-
-            <div class="spacer-30-line"></div>
-
-            <h5>Our Services</h5>
-            <ul class="no-style">
-                <li><a href="service-single.html">Waste Collection</a></li>
-                <li><a href="service-single.html">Commercial Recycling</a></li>
-                <li><a href="service-single.html">Dumpster Rental</a></li>
-                <li><a href="service-single.html">Organic Waste</a></li>
-                <li><a href="service-single.html">E-waste Disposal</a></li>
-                <li><a href="service-single.html">Medical Waste</a></li>
-            </ul>
-
-            <div class="spacer-30-line"></div>
-
-            <h5>Contact Us</h5>
-            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
-            <div><i class="icofont-location-pin me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>
-
-            <div class="spacer-30-line"></div>
-
-            <h5>About Us</h5>
-            <p>We provide reliable, eco-conscious waste management solutions for homes, businesses, and industries. With a focus on sustainability and innovation, we help communities reduce waste, recycle more, and create a cleaner, greener future.</p>
-
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
 
 
     <!-- Javascript Files

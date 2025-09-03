@@ -173,10 +173,12 @@
                         </div>
                         <div class="col-lg-5 order-lg-2 order-1">
                             <div class="subtitle wow fadeInUp mb-3">About Company</div>
-                            <h2 class="wow fadeInUp">Waste Solutions For Brighter Tomorrow</h2>
-                            <p class="wow fadeInUp">We specialize in innovative waste management solutions for residential, commercial, and industrial clients. From collection to recycling, we ensure responsible disposal that protects the environment while keeping communities clean and sustainable.</p>
+                            <h2 class="wow fadeInUp">Solusi Pengelolaan Sampah untuk Masa Depan</h2>
+                            <p class="wow fadeInUp">
+                                Kami berfokus pada solusi inovatif pengelolaan sampah untuk kebutuhan rumah tangga, komersial, dan industri. Mulai dari pengumpulan hingga daur ulang, kami memastikan pembuangan yang bertanggung jawab demi melindungi lingkungan sekaligus menjaga kebersihan dan keberlanjutan komunitas.
+                            </p>
                             <div class="spacer-10"></div>
-                            <a class="btn-main wow fadeInUp" href="about.html">About Company</a>
+
                         </div>
                     </div>
 
@@ -374,48 +376,6 @@
     </div>
 
 
-    <div id="extra-wrap" class="text-light">
-        <div id="btn-close">
-            <span></span>
-            <span></span>
-        </div>
-
-        <div id="extra-content">
-            <img src="images/logo-white.webp" class="w-150px" alt="">
-
-            <div class="spacer-30-line"></div>
-
-            <h5>Our Services</h5>
-            <ul class="no-style">
-                <li><a href="service-single.html">Waste Collection</a></li>
-                <li><a href="service-single.html">Commercial Recycling</a></li>
-                <li><a href="service-single.html">Dumpster Rental</a></li>
-                <li><a href="service-single.html">Organic Waste</a></li>
-                <li><a href="service-single.html">E-waste Disposal</a></li>
-                <li><a href="service-single.html">Medical Waste</a></li>
-            </ul>
-
-            <div class="spacer-30-line"></div>
-
-            <h5>Contact Us</h5>
-            <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
-            <div><i class="icofont-location-pin me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>
-
-            <div class="spacer-30-line"></div>
-
-            <h5>About Us</h5>
-            <p>We provide reliable, eco-conscious waste management solutions for homes, businesses, and industries. With a focus on sustainability and innovation, we help communities reduce waste, recycle more, and create a cleaner, greener future.</p>
-
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-discord"></i></a>
-                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
 
 
     <!-- Javascript Files
