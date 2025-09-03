@@ -136,7 +136,7 @@
                       <div class="col-lg-6 position-lg-absolute right-half h-100">
                         <div class="de-gradient-edge-top dark"></div>
                         <div class="image jarallax">
-                            <img src="images/background/10.webp" class="jarallax-img" alt="">
+                            <img src="images/banner2.webp" class="jarallax-img" alt="">
                         </div>
                       </div>
                       <!-- Text -->
@@ -196,7 +196,7 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">Michael Reynolds</h3>
+                                        <h3 class="mb-2">Agni Sakti Pribadi</h3>
                                         Chief Executive Officer
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
@@ -220,7 +220,7 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">Sarah Mitchell</h3>
+                                        <h3 class="mb-2">Nama Staff B</h3>
                                         Operations Manager
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
@@ -244,7 +244,7 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">David Martinez</h3>
+                                        <h3 class="mb-2">Nama Staff C</h3>
                                         Waste Collection Supervisor
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
@@ -268,7 +268,7 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">Linda Parker</h3>
+                                        <h3 class="mb-2">Nama Staff D</h3>
                                         Customer Service Manager
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>

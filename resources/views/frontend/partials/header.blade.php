@@ -40,11 +40,11 @@
                     <div class="de-flex-col header-col-mid">
                         <ul id="mainmenu">
                             <li><a class="menu-item" href="{{ route('frontend.index') }}">Home</a></li>
-                            <li><a class="menu-item" href="{{ route('frontend.projects') }}">Projects</a></li>
+                            {{-- <li><a class="menu-item" href="#">Projects</a></li> --}}
                             <li><a class="menu-item" href="#">Company</a>
                                 <ul>
-                                    <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                                    <li><a href="{{ route('frontend.team') }}">Our Team</a></li>
+                                    <li><a href="{{ route('frontend.about') }}">Tentang kami</a></li>
+                                    <li><a href="{{ route('frontend.team') }}">Team</a></li>
                                     <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                 </ul>
                             </li>

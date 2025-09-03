@@ -136,7 +136,7 @@
                       <div class="col-lg-6 position-lg-absolute right-half h-100">
                         <div class="de-gradient-edge-top dark"></div>
                         <div class="image jarallax">
-                            <img src="images/background/10.webp" class="jarallax-img" alt="">
+                            <img src="images/banner2.webp" class="jarallax-img" alt="">
                         </div>
                       </div>
                       <!-- Text -->

@@ -136,7 +136,7 @@
                       <div class="col-lg-6 position-lg-absolute right-half h-100">
                         <div class="de-gradient-edge-top dark"></div>
                         <div class="image jarallax">
-                            <img src="images/background/12.webp" class="jarallax-img" alt="">
+                            <img src="images/banner2.webp" class="jarallax-img" alt="">
                         </div>
                       </div>
                       <!-- Text -->
@@ -152,7 +152,7 @@
                                     <li class="active">Gallery</li>
                                 </ul>
                                 <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Gallery</h1>
-                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
+                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">solusi waste management sistem</p>
                                 <div class="spacer-double"></div>
                                 <div class="spacer-single sm-hide"></div>
 

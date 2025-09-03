@@ -154,7 +154,7 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/banner.jpg)">
+                            <div class="swiper-inner" data-bgimage="url(images/Banner1.webp)">
                                 <div class="sw-overlay op-1"></div>
                             </div>
                         </div>
@@ -202,13 +202,13 @@
                 </div>
             </section>
 
-            <section class="bg-dark p-0">
+            <section id="gambar" class="bg-dark p-0">
                 <div class="container-fluid">
                     <div class="row g-0">
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".0s">
-                                <img src="images/waste1.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/c.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Tonase sampah dapat dihitung dengan memisahkan kategori seperti organik, anorganik, B3, dan residu. Pendekatan ini membantu mengetahui volume tiap jenis sampah sehingga proses pengelolaan lebih terarah, misalnya organik untuk kompos, anorganik untuk daur ulang, dan B3 untuk perlakuan khusus.</div>
 
@@ -225,7 +225,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".3s">
-                                <img src="images/waste2.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/b.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Tonase juga bisa dicatat sesuai metode penanganan, seperti daur ulang, pengomposan, pembakaran, atau pembuangan ke TPA. Data ini memberikan gambaran efektivitas metode yang digunakan serta peluang pengurangan beban sampah di TPA.</div>
 
@@ -242,7 +242,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".6s">
-                                <img src="images/waste3.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/c.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Perhitungan tonase sampah menurut lokasi (rumah tangga, bisnis, industri, atau area publik) memberi pemahaman tentang sumber utama timbulan sampah. Informasi ini penting untuk menentukan strategi pengelolaan sesuai karakteristik lokasi.</div>
 
@@ -259,7 +259,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".9s">
-                                <img src="images/waste4.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/b.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Selain jenis, metode, dan lokasi, tonase juga relevan jika dianalisis per periode waktu tertentu (harian, mingguan, bulanan). Hal ini memudahkan pemetaan tren kenaikan atau penurunan sampah sehingga perencanaan pengelolaan lebih akurat.</div>
 
@@ -282,8 +282,8 @@
                 <div class="container">
                     <div class="row g-4 align-items-end justify-content-between">
                         <div class="col-lg-5">
-                            <div class="subtitle">How It Works</div>
-                            <h2>Proses Sederhana untuk Semua Kebutuhan Pengelolaan Sampah Anda</h2>
+                            <div class="subtitle">Apa itu Waste Management Sistem</div>
+                            <h2>Proses Sistematik untuk Semua Kebutuhan Pengelolaan Sampah</h2>
                         </div>
 
                         <div class="col-lg-4">
@@ -382,7 +382,7 @@
                         <div class="col-lg-12">
                             <div class="bg-color-2 jarallax text-light p-lg-5 p-4 relative overflow-hidden">
                                 <div class="sw-overlay op-3"></div>
-                                <img src="images/background/1.webp" class="jarallax-img" alt="">
+                                <img src="images/banner2.webp" class="jarallax-img" alt="">
                                 <div class="row g-4 align-items-center justify-content-between">
                                     <div class="col-md-6 col-sm-6 relative">
                                         <div class="relative z-index-1000">
