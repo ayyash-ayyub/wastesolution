@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
+    <title>Dahana</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
@@ -102,7 +102,7 @@
                                             <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('frontend.blog') }}">Blog</a></li>
+                                    <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                     <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
@@ -137,11 +137,11 @@
                             <div class="row g-4 align-items-center justify-content-between">
 
                                 <div class="col-lg-5">
-                                    <h1>Efficient Waste Management For a Greener World</h1>
+                                    <h1>Waste Management System</h1>
                                 </div>
 
                                 <div class="col-lg-4">
-                                    <p class="lead">Delivering smart waste solutions for homes, businesses & industries to keeping communities clean and protecting the environment every day.</p>
+                                    <p class="lead">Waste management adalah sistem pengelolaan sampah untuk mengurangi dampak lingkungan melalui pemilahan, daur ulang, dan pemrosesan yang berkelanjutan.</p>
                                     <a class="btn-main btn-line" href="projects.html">View Projects</a>
                                 </div>
                             </div>
@@ -154,14 +154,14 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/slider/3.jpg)">
+                            <div class="swiper-inner" data-bgimage="url(images/banner.jpg)">
                                 <div class="sw-overlay op-1"></div>
                             </div>
                         </div>
                         <!-- Slides -->
 
                         <!-- Slides -->
-                        <div class="swiper-slide">
+                        {{-- <div class="swiper-slide">
                             <div class="swiper-inner" data-bgimage="url(images/slider/4.jpg)">
                                 <div class="sw-overlay op-1"></div>
                             </div>
@@ -173,7 +173,7 @@
                             <div class="swiper-inner" data-bgimage="url(images/slider/5.jpg)">
                                 <div class="sw-overlay op-1"></div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Slides -->
 
                       </div>
@@ -186,17 +186,17 @@
             <section aria-label="section" class="pt-4 pb-4 bg-color">
                 <div class="wow fadeInRight d-flex">
                   <div class="de-marquee-list relative wow">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Collection</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reduce</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Commercial Recycling</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reuse</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Dumpster Rental</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Recycle</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Management</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Organic Waste</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Consulting</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Composting</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
                   </div>
                 </div>
@@ -208,14 +208,14 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".0s">
-                                <img src="images/services/1.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/waste1.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
-                                    <div class="mb-3">Delivering smart waste solutions for homes, businesses & industries to keeping communities clean and protecting the environment every day.</div>
-                                    <a class="btn-line" href="service-single.html">View Details</a>
+                                    <div class="mb-3">Tonase sampah dapat dihitung dengan memisahkan kategori seperti organik, anorganik, B3, dan residu. Pendekatan ini membantu mengetahui volume tiap jenis sampah sehingga proses pengelolaan lebih terarah, misalnya organik untuk kompos, anorganik untuk daur ulang, dan B3 untuk perlakuan khusus.</div>
+
                                 </div>
                                 <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                 <div class="abs abs-centered z-2 mt-3 w-100 text-center hover-op-0">
-                                    <h4 class="mb-3">Waste Collection</h4>
+                                    <h4 class="mb-3">Berdasarkan Jenis Sampah</h4>
                                 </div>
                                 <div class="gradient-trans-dark-bottom abs w-100 h-80 bottom-0"></div>
                             </div>
@@ -225,14 +225,14 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".3s">
-                                <img src="images/services/2.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/waste2.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
-                                    <div class="mb-3">Delivering smart waste solutions for homes, businesses & industries to keeping communities clean and protecting the environment every day.</div>
-                                    <a class="btn-line" href="service-single.html">View Details</a>
+                                    <div class="mb-3">Tonase juga bisa dicatat sesuai metode penanganan, seperti daur ulang, pengomposan, pembakaran, atau pembuangan ke TPA. Data ini memberikan gambaran efektivitas metode yang digunakan serta peluang pengurangan beban sampah di TPA.</div>
+
                                 </div>
                                 <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                 <div class="abs abs-centered z-2 mt-3 w-100 text-center hover-op-0">
-                                    <h4 class="mb-3">Commercial Recycling</h4>
+                                    <h4 class="mb-3">Berdasarkan Metode Pengelolaan</h4>
                                 </div>
                                 <div class="gradient-trans-dark-bottom abs w-100 h-80 bottom-0"></div>
                             </div>
@@ -242,14 +242,14 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".6s">
-                                <img src="images/services/3.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/waste3.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
-                                    <div class="mb-3">Delivering smart waste solutions for homes, businesses & industries to keeping communities clean and protecting the environment every day.</div>
-                                    <a class="btn-line" href="service-single.html">View Details</a>
+                                    <div class="mb-3">Perhitungan tonase sampah menurut lokasi (rumah tangga, bisnis, industri, atau area publik) memberi pemahaman tentang sumber utama timbulan sampah. Informasi ini penting untuk menentukan strategi pengelolaan sesuai karakteristik lokasi.</div>
+
                                 </div>
                                 <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                 <div class="abs abs-centered z-2 mt-3 w-100 text-center hover-op-0">
-                                    <h4 class="mb-3">Dumpster Rental</h4>
+                                    <h4 class="mb-3">Berdasarkan Lokasi Pengumpulan</h4>
                                 </div>
                                 <div class="gradient-trans-dark-bottom abs w-100 h-80 bottom-0"></div>
                             </div>
@@ -259,14 +259,14 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".9s">
-                                <img src="images/services/4.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="images/waste4.png" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
-                                    <div class="mb-3">Delivering smart waste solutions for homes, businesses & industries to keeping communities clean and protecting the environment every day.</div>
-                                    <a class="btn-line" href="service-single.html">View Details</a>
+                                    <div class="mb-3">Selain jenis, metode, dan lokasi, tonase juga relevan jika dianalisis per periode waktu tertentu (harian, mingguan, bulanan). Hal ini memudahkan pemetaan tren kenaikan atau penurunan sampah sehingga perencanaan pengelolaan lebih akurat.</div>
+
                                 </div>
                                 <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                 <div class="abs abs-centered z-2 mt-3 w-100 text-center hover-op-0">
-                                    <h4 class="mb-3">Organic Waste</h4>
+                                    <h4 class="mb-3">Berdasarkan Periode Waktu</h4>
                                 </div>
                                 <div class="gradient-trans-dark-bottom abs w-100 h-80 bottom-0"></div>
                             </div>
@@ -283,11 +283,11 @@
                     <div class="row g-4 align-items-end justify-content-between">
                         <div class="col-lg-5">
                             <div class="subtitle">How It Works</div>
-                            <h2>A Simple Process For All Your Waste Management Needs</h2>
+                            <h2>Proses Sederhana untuk Semua Kebutuhan Pengelolaan Sampah Anda</h2>
                         </div>
 
                         <div class="col-lg-4">
-                            <p class="lead">Delivering smart waste solutions for homes, businesses & industries to keeping communities clean and protecting the environment every day.</p>
+                            <p class="lead">Peduli pada komunitas dengan solusi cerdas pengelolaan sampah—membantu rumah, bisnis, dan industri tetap bersih sekaligus melindungi lingkungan setiap hari.</p>
                         </div>
                     </div>
 
@@ -296,7 +296,7 @@
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6">
                             <div class="wow zoomIn overflow-hidden">
-                                <img src="images/misc/2.webp" class="w-100 wow scaleIn" alt="">
+                                <img src="images/waste1000a.png" class="w-100 wow scaleIn" alt="">
                             </div>
                         </div>
 
@@ -305,32 +305,32 @@
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
                                         <img src="images/icons/phones.png" class="w-70px mb-4 wow scaleIn" alt="">
-                                        <h4>Request & Pickup</h4>
-                                        <p>Waste pickups are scheduled and collected from homes, businesses, or job sites.</p>
+                                        <h4>Permintaan & Penjemputan</h4>
+                                        <p>Sampah dijadwalkan untuk dijemput dan dikumpulkan dari rumah, bisnis, atau lokasi kerja.</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
                                         <img src="images/icons/lorry.png" class="w-70px mb-4 wow scaleIn" alt="">
-                                        <h4>Transportation</h4>
-                                        <p>Waste is safely transported in specialized vehicles to treatment or disposal facilities.</p>
+                                        <h4>Transportasi</h4>
+                                        <p>Sampah diangkut dengan aman menggunakan kendaraan khusus menuju fasilitas pengolahan atau pembuangan.</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
                                         <img src="images/icons/recycle-bin.png" class="w-70px mb-4 wow scaleIn" alt="">
-                                        <h4>Sorting & Processing</h4>
-                                        <p>Waste is sorted into types and processed for recycling, composting, or disposal.</p>
+                                        <h4>Penyortiran & Pemrosesan</h4>
+                                        <p>Sampah dipilah berdasarkan jenisnya dan diproses untuk didaur ulang, dijadikan kompos, atau dibuang.</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
                                         <img src="images/icons/recycle.png" class="w-70px mb-4 wow scaleIn" alt="">
-                                        <h4>Disposal or Recycling</h4>
-                                        <p>Recyclables are reused, organics composted, and the rest safely disposed of or incinerated.</p>
+                                        <h4>Pembuangan atau Daur Ulang</h4>
+                                        <p>Sampah yang dapat didaur ulang digunakan kembali, sampah organik dijadikan kompos, dan sisanya dibuang atau dibakar dengan aman.</p>
                                     </div>
                                 </div>
                             </div>
@@ -386,17 +386,17 @@
                                 <div class="row g-4 align-items-center justify-content-between">
                                     <div class="col-md-6 col-sm-6 relative">
                                         <div class="relative z-index-1000">
-                                            <h2 class="wow fadeInUp" data-wow-delay=".3s">Contact us today to schedule your waste service and keep your space clean</h2>
+                                            <h2 class="wow fadeInUp" data-wow-delay=".3s">Kelola Sampah Cerdas, Lingkungan Sehat.</h2>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-6">
+                                    {{-- <div class="col-md-3 col-sm-6">
                                         <div class="bg-color px-4 py-5 d-block text-center wow zoomIn" data-wow-delay=".6s">
                                             <img src="images/icons/call.webp" class="w-40 mb-3" alt="">
                                             <p class="lead mb-0">24 Hours</p>
                                             <h4 class="mb-0">+1 123 456 789</h4>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
                             </div>
@@ -404,7 +404,7 @@
                     </div>
                 </div>
             </section>
-
+{{--
             <section>
                 <div class="container">
                     <div class="row g-4">
@@ -546,7 +546,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>f
+                    </div>
                 </div>
             </section>
 
@@ -654,7 +654,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> --}}
 
 
             <section class="relative overflow-hidden">
@@ -662,16 +662,16 @@
                 <div class="container relative z-2">
                     <div class="row g-4 align-items-end">
                         <div class="col-lg-4">
-                            <div class="subtitle">Our Mission</div>
-                            <h2>Responsible Waste Disposal for a Healthier Tomorrow</h2>
+                            <div class="subtitle">Misi kami</div>
+                            <h2>Mengelola sampah demi lingkungan yang bersih.</h2>
                         </div>
                         <div class="col-lg-8">
                             <ul class="ul-check">
-                                <li>Deliver efficient, eco-friendly waste collection, recycling, and disposal services.</li>
-                                <li>Promote sustainability through waste reduction, reuse, and recycling initiatives.</li>
-                                <li>Ensure compliance with environmental regulations and best industry practices.</li>
-                                <li>Educate communities on responsible waste management and environmental stewardship.</li>
-                                <li>Utilize advanced technology to enhance waste management efficiency and sustainability.</li>
+                                <li>Digitalisasi pengelolaan sampah untuk mempermudah pemantauan dan penjadwalan penjemputan.</li>
+                                <li>Penyediaan informasi dan kajian berbasis data untuk mendukung keputusan dan edukasi masyarakat.</li>
+                                <li>Sistem penyortiran otomatis berdasarkan kategori sampah organik, anorganik, dan B3.</li>
+                                <li>Integrasi proses daur ulang dalam alur sistem untuk mengurangi volume sampah ke TPA.</li>
+                                <li>Pemantauan berbasis data untuk mendukung kebijakan berkelanjutan dalam pengelolaan sampah.</li>
                             </ul>
                         </div>
                     </div>
@@ -680,18 +680,19 @@
 
             <section aria-label="section" class="pt-4 pb-4 bg-color">
                 <div class="wow fadeInRight d-flex">
-                  <div class="de-marquee-list relative wow">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Collection</span>
+
+                      <div class="de-marquee-list relative wow">
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reduce</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Commercial Recycling</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reuse</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Dumpster Rental</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Recycle</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Management</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Organic Waste</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
-                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Consulting</span>
+                    <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Composting</span>
                     <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
                   </div>
                 </div>
@@ -720,7 +721,7 @@
                                         <li><a href="services.html">Our Services</a></li>
                                         <li><a href="projects.html">Projects</a></li>
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>

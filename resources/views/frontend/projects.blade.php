@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
+    <title>Dahana</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
@@ -25,7 +25,7 @@
 <body>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
-        
+
         <!-- preloader begin -->
         <div id="de-loader"></div>
         <!-- preloader end -->
@@ -101,7 +101,7 @@
                                             <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('frontend.blog') }}">Blog</a></li>
+                            <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                     <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
@@ -150,7 +150,7 @@
                                 <ul class="crumb">
                                     <li><a href="index.html">Home</a></li>
                                     <li class="active">Our Projects</li>
-                                </ul>                                
+                                </ul>
                                 <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Our Projects</h1>
                                 <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
                                 <div class="spacer-double"></div>
@@ -164,7 +164,7 @@
                   </div>
                 </div>
             </section>
-            
+
 
             <section>
                 <div class="container">
@@ -354,10 +354,10 @@
                   </div>
                 </div>
             </section>
-            
+
         </div>
         <!-- content end -->
-        
+
         <!-- footer begin -->
         @include('frontend.partials.footer')
         <footer class="section-dark" style="display:none">
@@ -469,7 +469,7 @@
             <h5>Contact Us</h5>
             <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>    
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>
 
             <div class="spacer-30-line"></div>
 

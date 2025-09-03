@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
+    <title>Dahana</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
@@ -25,7 +25,7 @@
 <body>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
-        
+
         <!-- preloader begin -->
         <div id="de-loader"></div>
         <!-- preloader end -->
@@ -101,7 +101,7 @@
                                             <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('frontend.blog') }}">Blog</a></li>
+                            <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                     <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
@@ -133,7 +133,7 @@
                   <div class="container">
                     <div class="row">
                       <!-- Image -->
-                      
+
                       <!-- Text -->
                       <div class="col-lg-12 relative">
                         <div class="spacer-double"></div>
@@ -143,14 +143,17 @@
                         <div class="spacer-single sm-hide"></div>
                         <ul class="crumb">
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="projects.html">Blog</a></li>
-                            <li class="active">Blog Single</li>
-                        </ul>                                
-                        <h1 class="wow fadeInUp" data-wow-delay=".2s">Sustainable Waste Management Strategies for a Cleaner, Greener, and Healthier Planet</h1>
-                        <div class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">                            
+                            <li><a href="{{ route('frontend.kajian') }}">Kajian</a></li>
+                            <li class="active">Kajian detail</li>
+                        </ul>
+                        <h1 class="wow fadeInUp" data-wow-delay=".2s">{{ $item->judul }}</h1>
+                        <div class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">
                             <img src="images/testimonial/1.webp" class="w-20px me-2 circle" alt="">
-                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                            <div class="d-inline fs-14 fw-600"><i class="fas fa-tags me-2"></i>Waste Management</div>
+                            <div class="d-inline fs-14 fw-bold me-3">{{ $item->penulis }}</div>
+                            <div class="d-inline fs-14 fw-600">
+                                <i class="fas fa-link me-2"></i>
+                                <a href="{{ $item->link_dokumen }}" target="_blank" rel="noopener">Dokumen</a>
+                            </div>
                         </div>
                         <div class="spacer-double"></div>
                         <div class="spacer-single sm-hide"></div>
@@ -171,196 +174,25 @@
                             <div class="blog-read">
 
                                 <div class="post-text">
-                                    <p>Quis sunt quis do laboris eiusmod in sint dolore sit pariatur consequat commodo aliqua nulla ad dolor aliquip incididunt voluptate est aliquip adipisicing ea cupidatat nostrud incididunt aliquip dolore. Sed minim nisi duis laborum est labore nisi amet elit adipisicing proident do consectetur dolor labore sit nisi ad proident esse ad velit nisi irure reprehenderit ut et dolor labore veniam quis.</p>                                    
-                                    <p>Sunt duis laboris ex et quis laborum laborum cillum mollit voluptate culpa consequat ex cupidatat dolor eiusmod proident proident cillum pariatur sint adipisicing in nostrud do dolore consectetur quis incididunt minim consectetur. Exercitation elit proident dolor est id eiusmod dolor dolor incididunt ad voluptate laboris cupidatat est est sint veniam sint officia sint incididunt est sit ut tempor commodo pariatur ut proident et do.</p>
+                                    <p>{{ $item->resume }}</p>
 
-                                    <blockquote class="quote-s1 mb-4">Quis sunt quis do laboris eiusmod in sint dolore sit pariatur consequat commodo aliqua nulla ad dolor aliquip incididunt voluptate est aliquip adipisicing ea cupidatat nostrud incididunt aliquip dolore.</blockquote>
 
-                                    <img src="images/background/2.webp" class="w-100" alt="">
-
-                                    <h4>Sint fugiat esse et dolore</h4>
-                                    <p>Sed eu in ut sint dolor irure fugiat minim veniam sed ea proident ullamco occaecat irure ut velit eu ullamco fugiat cupidatat dolore fugiat. Lorem ipsum id non deserunt id consequat duis voluptate amet aliqua pariatur laboris officia pariatur veniam velit reprehenderit sint nostrud cupidatat magna eiusmod mollit exercitation pariatur nulla minim laboris dolore aliqua consectetur cillum duis aute consectetur.</p>
 
                                 </div>
 
                             </div>
 
-                            <div class="spacer-single"></div>
-
-                            <div id="blog-comment">
-                                <h4>Comments (5)</h4>
-
-                                <div class="spacer-half"></div>
-
-                                <ol>
-                                    <li>
-                                        <div class="avatar">
-                                            <img src="images/testimonial/1.webp" alt="" ></div>
-                                        <div class="comment-info">
-                                            <span class="c_name">Merrill Rayos</span>
-                                            <span class="c_date id-color">2 days ago</span>
-                                            <span class="c_reply"><a href="#">Reply</a></span>
-                                            <div class="clearfix"></div>
-                                        </div>
-
-                                        <div class="comment">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-                                        <ol>
-                                            <li>
-                                                <div class="avatar">
-                                                    <img src="images/testimonial/2.webp" alt="" ></div>
-                                                <div class="comment-info">
-                                                    <span class="c_name">Jackqueline Sprang</span>
-                                                    <span class="c_date id-color">2 days ago</span>
-                                                    <span class="c_reply"><a href="#">Reply</a></span>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="comment">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                                    explicabo.</div>
-                                            </li>
-                                        </ol>
-                                    </li>
-
-                                    <li>
-                                        <div class="avatar">
-                                            <img src="images/testimonial/3.webp" alt="" ></div>
-                                        <div class="comment-info">
-                                            <span class="c_name">Sanford Crowley</span>
-                                            <span class="c_date id-color">2 days ago</span>
-                                            <span class="c_reply"><a href="#">Reply</a></span>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="comment">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-                                        <ol>
-                                            <li>
-                                                <div class="avatar">
-                                                    <img src="images/testimonial/4.webp" alt="" ></div>
-                                                <div class="comment-info">
-                                                    <span class="c_name">Lyndon Pocekay</span>
-                                                    <span class="c_date id-color">2 days ago</span>
-                                                    <span class="c_reply"><a href="#">Reply</a></span>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <div class="comment">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                                    explicabo.</div>
-                                            </li>
-                                        </ol>
-                                    </li>
-
-                                    <li>
-                                        <div class="avatar">
-                                            <img src="images/testimonial/5.webp" alt="" ></div>
-                                        <div class="comment-info">
-                                            <span class="c_name">Aleen Crigger</span>
-                                            <span class="c_date id-color">2 days ago</span>
-                                            <span class="c_reply"><a href="#">Reply</a></span>
-
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="comment">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-                                    </li>
-                                </ol>
-
-                                <div class="spacer-single"></div>
-
-                                <div id="comment-form-wrapper">
-                                    <h4>Leave a Comment</h4>
-                                    <div class="comment_form_holder">
-                                        <form id="contact_form" name="form1" class="form-border" method="post" action="#">
-
-                                            <label>Name</label>
-                                            <input type="text" name="name" id="name" class="form-control" >
-
-                                            <label>Email <span class="req">*</span></label>
-                                            <input type="text" name="email" id="email" class="form-control" >
-                                            <div id="error_email" class="error">Please check your email</div>
-
-                                            <label>Message <span class="req">*</span></label>
-                                            <textarea cols="10" rows="10" name="message" id="message" class="form-control"></textarea>
-                                            <div id="error_message" class="error">Please check your message</div>
-                                            <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-                                            <div id="mail_failed" class="error">Error, email not sent</div>
-
-                                            <p id="btnsubmit">
-                                                <input type="submit" id="send" value="Send" class="btn-main" ></p>
-
-
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
 
-                        <div class="col-lg-4">
-                            <div class="widget widget-post">
-                                <h4>Popular Posts</h4>
-                                <ul class="de-bloglist-type-1">
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/1.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Sustainable Waste Management Strategies for a Cleaner, Greener, and Healthier Planet</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/2.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Innovative Waste Management Solutions to Reduce Pollution and Promote Sustainability</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/3.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Reducing Landfill Waste: Practical Waste Management Solutions for a Greener Planet</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/4.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Investment Boom: Billions Poured into Electric Vehicle Battery Technology Research</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="widget widget_tags">
-                                <h4>Popular Tags</h4>
-                                <ul>
-                                    <li><a href="#link">Art</a></li>
-                                    <li><a href="#link">Application</a></li>
-                                    <li><a href="#link">Design</a></li>
-                                    <li><a href="#link">Entertainment</a></li>
-                                    <li><a href="#link">Internet</a></li>
-                                    <li><a href="#link">Marketing</a></li>
-                                    <li><a href="#link">Multipurpose</a></li>
-                                    <li><a href="#link">Music</a></li>
-                                    <li><a href="#link">Print</a></li>
-                                    <li><a href="#link">Programming</a></li>
-                                    <li><a href="#link">Responsive</a></li>
-                                    <li><a href="#link">Website</a></li>
-                                </ul>
-                            </div>
 
-                        </div>
                     </div>
                 </div>
             </section>
-            
+
         </div>
         <!-- content end -->
-        
+
         <!-- footer begin -->
         @include('frontend.partials.footer')
         <footer class="section-dark" style="display:none">
@@ -381,7 +213,7 @@
                                         <li><a href="services.html">Our Services</a></li>
                                         <li><a href="projects.html">Projects</a></li>
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
@@ -472,7 +304,7 @@
             <h5>Contact Us</h5>
             <div><i class="fas fa-clock me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
             <div><i class="fas fa-map-marker-alt me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="fas fa-envelope me-2 op-5"></i>contact@wastewise.com</div>    
+            <div><i class="fas fa-envelope me-2 op-5"></i>contact@wastewise.com</div>
 
             <div class="spacer-30-line"></div>
 

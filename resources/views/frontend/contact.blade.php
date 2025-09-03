@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
+    <title>Dahana</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Wastewise — Waste Management and Recycling Website Template" name="description" >
+    <meta content="Dahana" name="description" >
     <meta content="" name="keywords" >
     <meta content="" name="author" >
     <!-- CSS Files
@@ -101,7 +101,7 @@
                                             <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('frontend.blog') }}">Blog</a></li>
+                            <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                     <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
@@ -171,29 +171,29 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="subtitle">Get In Touch</div>
-                            <h2 class="wow fadeInUp">We are always ready to help you and answer your questions</h2>
+                            <h2 class="wow fadeInUp">Kami selalu siap membantu Anda dan menjawab pertanyaan Anda.</h2>
 
-                            <p>Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.</p>
+                            <p>Apakah Anda memiliki pertanyaan, saran, atau hanya ingin menyapa, di sinilah tempatnya. Silakan isi formulir di bawah ini dengan detail dan pesan Anda, dan kami akan segera menghubungi Anda kembali.</p>
 
                             <div class="row g-4 gx-5">
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-clock me-2 id-color-2"></i>We're Open</div>
-                                    Monday - Friday 08.00 - 18.00
+                                    Senin - Jumat 08.00 - 18.00
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-map-marker-alt me-2 id-color-2"></i>Office Location</div>
-                                    100 S Main St, New York, NY
+                                    Pamulang, Tangerang Selatan
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-phone me-2 id-color-2"></i>Call Us Directly</div>
-                                    +1 123 456 789
+                                    +62 0000000
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-envelope me-2 id-color-2"></i>Send a Message</div>
-                                    contact@wastewise.com      
+                                    agnisaktip@gmail.com
                                 </div>
                             </div>
 

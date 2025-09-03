@@ -34,10 +34,22 @@ Route::name('frontend.')->group(function () {
     Route::get('/index.html', fn() => view('frontend.index'));
     Route::get('/about', fn() => view('frontend.about'))->name('about');
     Route::get('/about.html', fn() => view('frontend.about'));
-    Route::get('/blog', fn() => view('frontend.blog'))->name('blog');
-    Route::get('/blog.html', fn() => view('frontend.blog'));
-    Route::get('/blog-single', fn() => view('frontend.blog-single'))->name('blog-single');
-    Route::get('/blog-single.html', fn() => view('frontend.blog-single'));
+    Route::get('/kajian', function () {
+        $kajians = \App\Models\MasterKajian::orderByDesc('created_at')->get();
+        return view('frontend.kajian', compact('kajians'));
+    })->name('kajian');
+    Route::get('/kajian.html', function () {
+        $kajians = \App\Models\MasterKajian::orderByDesc('created_at')->get();
+        return view('frontend.kajian', compact('kajians'));
+    });
+    Route::get('/kajian-single/{kajian}', function ($kajian) {
+        $item = \App\Models\MasterKajian::findOrFail($kajian);
+        return view('frontend.kajian-single', compact('item'));
+    })->name('kajian-single');
+    Route::get('/kajian-single.html/{kajian}', function ($kajian) {
+        $item = \App\Models\MasterKajian::findOrFail($kajian);
+        return view('frontend.kajian-single', compact('item'));
+    });
     Route::get('/contact', fn() => view('frontend.contact'))->name('contact');
     Route::get('/contact.html', fn() => view('frontend.contact'));
     Route::get('/gallery', fn() => view('frontend.gallery'))->name('gallery');

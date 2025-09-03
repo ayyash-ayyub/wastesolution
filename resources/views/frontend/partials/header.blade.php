@@ -6,9 +6,9 @@
                 <div class="col-lg-12">
                     <div class="d-flex justify-content-between xs-hide">
                         <div class="d-flex">
-                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-clock"></i>Monday - Friday 08.00 - 18.00</a></div>
-                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-envelope"></i>contact@wastewise.com</a></div>
-                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-phone"></i>+1 123 456 789</a></div>
+                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-clock"></i>Senin - Jumat 08.00 - 18.00</a></div>
+                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-envelope"></i>agnisaktip@gmail.com</a></div>
+                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-phone"></i>+62 0000000</a></div>
                         </div>
                         <div class="d-flex">
                             <div class="social-icons">
@@ -48,7 +48,7 @@
                                     <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                 </ul>
                             </li>
-                            <li><a class="menu-item" href="{{ route('frontend.blog') }}">Blog</a></li>
+                            <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                             <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                         </ul>
                     </div>

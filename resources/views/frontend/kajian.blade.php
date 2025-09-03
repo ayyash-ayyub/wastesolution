@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Wastewise — Waste Management and Recycling Website Template</title>
+    <title>Dahana</title>
     <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
@@ -25,7 +25,7 @@
 <body>
     <div id="wrapper">
         <a href="#" id="back-to-top"></a>
-        
+
         <!-- preloader begin -->
         <div id="de-loader"></div>
         <!-- preloader end -->
@@ -101,7 +101,7 @@
                                             <li><a href="{{ route('frontend.gallery') }}">Gallery</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="{{ route('frontend.blog') }}">Blog</a></li>
+                            <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                     <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                                 </ul>
                                 <!-- mainmenu end -->
@@ -149,10 +149,10 @@
                                 <div class="spacer-single sm-hide"></div>
                                 <ul class="crumb">
                                     <li><a href="index.html">Home</a></li>
-                                    <li class="active">Blog</li>
-                                </ul>                                
-                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Blog</h1>
-                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
+                                    <li class="active">Kajian</li>
+                                </ul>
+                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Kajian</h1>
+                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Daftar Kajian dan Riset</p>
                                 <div class="spacer-double"></div>
                                 <div class="spacer-single sm-hide"></div>
 
@@ -164,219 +164,41 @@
                   </div>
                 </div>
             </section>
-            
+
 
             <section>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8">
                             <!-- blog item begin -->
+                            @foreach(($kajians ?? []) as $k)
                             <div class="mb-4 pb-4 border-bottom">
                                 <div class="row g-4 align-items-center">
                                     <div class="col-md-6">
                                         <div class="post-image relative hover">
                                             <div class="d-inline bg-color text-white absolute text-center fw-bold start-0 mt-4 ms-4 p-3 pb-2">
-                                                <span class="fs-32">20</span>
-                                                <span class="d-block fs-16 text-uppercase">May</span>
+                                                <span class="fs-32">{{ optional($k->created_at)->format('d') }}</span>
+                                                <span class="d-block fs-16 text-uppercase">{{ optional($k->created_at)->format('M') }}</span>
                                             </div>
-                                            <img alt="" src="images/blog/1.webp" class="hover-scale-1-1">
+                                            <img alt="" src="{{ asset('images/blog/1.webp') }}" class="hover-scale-1-1">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-2">
-                                            <img src="images/testimonial/1.webp" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                                            <div class="d-inline fs-14 fw-600"><i class="icofont-tags id-color me-2"></i>Waste Management</div>
+                                            <img src="{{ asset('images/testimonial/1.webp') }}" class="w-20px me-2 circle" alt="">
+                                            <div class="d-inline fs-14 fw-bold me-3">{{ $k->penulis }}</div>
                                         </div>
-                                        <h3><a class="text-dark" href="blog-single.html">Sustainable Waste Management Strategies for a Cleaner, Greener, and Healthier Planet</a></h3>
+                                        <h3><a class="text-dark" href="{{ route('frontend.kajian-single', $k->id) }}">{{ $k->judul }}</a></h3>
                                     </div>
                                 </div>
                             </div>
-                            <!-- blog item end -->
+                            @endforeach
 
-                            <!-- blog item begin -->
-                            <div class="mb-4 pb-4 border-bottom">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="post-image relative hover">
-                                            <div class="d-inline bg-color text-white absolute text-center fw-bold start-0 mt-4 ms-4 p-3 pb-2">
-                                                <span class="fs-32">20</span>
-                                                <span class="d-block fs-16 text-uppercase">May</span>
-                                            </div>
-                                            <img alt="" src="images/blog/2.webp" class="hover-scale-1-1">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <img src="images/testimonial/2.webp" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                                            <div class="d-inline fs-14 fw-600"><i class="icofont-tags id-color me-2"></i>Waste Management</div>
-                                        </div>
-                                        <h3><a class="text-dark" href="blog-single.html">Innovative Waste Management Solutions to Reduce Pollution and Promote Sustainability</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- blog item end -->
 
-                            <!-- blog item begin -->
-                            <div class="mb-4 pb-4 border-bottom">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="post-image relative hover">
-                                            <div class="d-inline bg-color text-white absolute text-center fw-bold start-0 mt-4 ms-4 p-3 pb-2">
-                                                <span class="fs-32">20</span>
-                                                <span class="d-block fs-16 text-uppercase">May</span>
-                                            </div>
-                                            <img alt="" src="images/blog/3.webp" class="hover-scale-1-1">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <img src="images/testimonial/3.webp" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                                            <div class="d-inline fs-14 fw-600"><i class="icofont-tags id-color me-2"></i>Waste Management</div>
-                                        </div>
-                                        <h3><a class="text-dark" href="blog-single.html">Effective Waste Management: Reducing, Recycling, and Reusing for a Better Future</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- blog item end -->
-
-                            <!-- blog item begin -->
-                            <div class="mb-4 pb-4 border-bottom">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="post-image relative hover">
-                                            <div class="d-inline bg-color text-white absolute text-center fw-bold start-0 mt-4 ms-4 p-3 pb-2">
-                                                <span class="fs-32">20</span>
-                                                <span class="d-block fs-16 text-uppercase">May</span>
-                                            </div>
-                                            <img alt="" src="images/blog/4.webp" class="hover-scale-1-1">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <img src="images/testimonial/4.webp" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                                            <div class="d-inline fs-14 fw-600"><i class="icofont-tags id-color me-2"></i>Waste Management</div>
-                                        </div>
-                                        <h3><a class="text-dark" href="blog-single.html">Reducing Landfill Waste: Practical Waste Management Solutions for a Greener Planet</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- blog item end -->
-
-                            <!-- blog item begin -->
-                            <div class="mb-4 pb-4 border-bottom">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="post-image relative hover">
-                                            <div class="d-inline bg-color text-white absolute text-center fw-bold start-0 mt-4 ms-4 p-3 pb-2">
-                                                <span class="fs-32">20</span>
-                                                <span class="d-block fs-16 text-uppercase">May</span>
-                                            </div>
-                                            <img alt="" src="images/blog/5.webp" class="hover-scale-1-1">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <img src="images/testimonial/5.webp" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                                            <div class="d-inline fs-14 fw-600"><i class="icofont-tags id-color me-2"></i>Waste Management</div>
-                                        </div>
-                                        <h3><a class="text-dark" href="blog-single.html">The Future of Waste Management: Sustainable Solutions for a Cleaner Environment</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- blog item end -->
-
-                            <!-- blog item begin -->
-                            <div class="mb-4 pb-4 border-bottom">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-6">
-                                        <div class="post-image relative hover">
-                                            <div class="d-inline bg-color text-white absolute text-center fw-bold start-0 mt-4 ms-4 p-3 pb-2">
-                                                <span class="fs-32">20</span>
-                                                <span class="d-block fs-16 text-uppercase">May</span>
-                                            </div>
-                                            <img alt="" src="images/blog/6.webp" class="hover-scale-1-1">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-2">
-                                            <img src="images/testimonial/6.webp" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">Brunilda Doniger</div>
-                                            <div class="d-inline fs-14 fw-600"><i class="icofont-tags id-color me-2"></i>Waste Management</div>
-                                        </div>
-                                        <h3><a class="text-dark" href="blog-single.html">How Proper Waste Management Can Help Combat Climate Change and Pollution</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- blog item end -->
                         </div>
 
-                        <div class="col-lg-4">
-                            <div class="widget widget-post">
-                                <h4>Popular Posts</h4>
-                                <ul class="de-bloglist-type-1">
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/1.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Sustainable Waste Management Strategies for a Cleaner, Greener, and Healthier Planet</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/2.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Innovative Waste Management Solutions to Reduce Pollution and Promote Sustainability</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/3.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Reducing Landfill Waste: Practical Waste Management Solutions for a Greener Planet</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="d-image">
-                                            <img src="images/blog-thumbnail/4.webp" alt="">
-                                        </div>
-                                        <div class="d-content">
-                                            <a href="blog-single.html"><h4>Investment Boom: Billions Poured into Electric Vehicle Battery Technology Research</h4></a>
-                                            <div class="d-date">January 15, 2023</div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <div class="widget widget_tags">
-                                <h4>Popular Tags</h4>
-                                <ul>
-                                    <li><a href="#link">Art</a></li>
-                                    <li><a href="#link">Application</a></li>
-                                    <li><a href="#link">Design</a></li>
-                                    <li><a href="#link">Entertainment</a></li>
-                                    <li><a href="#link">Internet</a></li>
-                                    <li><a href="#link">Marketing</a></li>
-                                    <li><a href="#link">Multipurpose</a></li>
-                                    <li><a href="#link">Music</a></li>
-                                    <li><a href="#link">Print</a></li>
-                                    <li><a href="#link">Programming</a></li>
-                                    <li><a href="#link">Responsive</a></li>
-                                    <li><a href="#link">Website</a></li>
-                                </ul>
-                            </div>
 
-                        </div>
+
 
                     </div>
                 </div>
@@ -400,10 +222,10 @@
                   </div>
                 </div>
             </section>
-            
+
         </div>
         <!-- content end -->
-        
+
         <!-- footer begin -->
         @include('frontend.partials.footer')
         <footer class="section-dark" style="display:none">
@@ -424,7 +246,7 @@
                                         <li><a href="services.html">Our Services</a></li>
                                         <li><a href="projects.html">Projects</a></li>
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="{{ route('frontend.kajian') }}">Kajian</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
@@ -515,7 +337,7 @@
             <h5>Contact Us</h5>
             <div><i class="icofont-clock-time me-2 op-5"></i>Monday - Friday 08.00 - 18.00</div>
             <div><i class="icofont-location-pin me-2 op-5"></i>100 S Main St, New York, </div>
-            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>    
+            <div><i class="icofont-envelope me-2 op-5"></i>contact@wastewise.com</div>
 
             <div class="spacer-30-line"></div>
 
