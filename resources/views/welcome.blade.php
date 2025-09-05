@@ -3,7 +3,7 @@
 
 <head>
     <title>Wastewise — Waste Management and Recycling Website Template</title>
-    <link rel="icon" href="{{ asset('images/icon.webp') }}" type="image/gif" sizes="16x16">
+    <link rel="icon" href="{{ asset('favi.ico') }}" type="image/x-icon">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
     <meta content="Wastewise — Waste Management and Recycling Website Template" name="description" >
