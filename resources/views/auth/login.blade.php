@@ -29,7 +29,7 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Email atau Username</label>
-                                <input type="text" name="login" class="form-control" placeholder="contoh: sakti atau sakti@example.com" value="{{ old('login') }}" required>
+                                <input type="text" name="login" class="form-control" placeholder="contoh: sakti atau sakti@dahanawastesolution.com" value="{{ old('login') }}" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Password</label>

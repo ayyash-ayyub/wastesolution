@@ -2,24 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>Dahana</title>
-    <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Wastewise — Waste Management and Recycling Website Template" name="description" >
-    <meta content="" name="keywords" >
-    <meta content="" name="author" >
-    <!-- CSS Files
-    ================================================== -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="{{ asset('css/plugins.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" >
-    <!-- color scheme -->
-    <link id="colors" href="{{ asset('css/colors/scheme-01.css') }}" rel="stylesheet" type="text/css" >
-    <!-- Icon fonts via CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.1/icofont.min.css">
-
+@include('frontend.partials.head', [
+    'title' => 'About — Dahana',
+    'metaDescription' => 'Tentang Dahana Waste Management System',
+    'metaAuthor' => 'Dahana'
+])
+    <style>
+        /* Warna hijau gelap untuk semua <strong> pada laman ini */
+        #wrapper strong { color: #0f5132; }
+    </style>
 </head>
 
 <body>
@@ -152,7 +143,7 @@
                                     <li class="active">About Us</li>
                                 </ul>
                                 <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">About Us</h1>
-                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
+                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Solusi Pengelolaan Sampah untuk Masa Depan yang Lebih Bersih dan berkelanjutan</p>
                                 <div class="spacer-double"></div>
                                 <div class="spacer-single sm-hide"></div>
 
@@ -179,9 +170,9 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="subtitle wow fadeInUp mb-3">About Company</div>
-                            <h2 class="wow fadeInUp">Waste Solutions For Brighter Tomorrow</h2>
-                            <p class="wow fadeInUp">We specialize in innovative waste management solutions for residential, commercial, and industrial clients. From collection to recycling, we ensure responsible disposal that protects the environment while keeping communities clean and sustainable.</p>
+                            <div class="subtitle wow fadeInUp mb-3">Tentang kami</div>
+                            <h2 class="wow fadeInUp">dahanawastesolution</h2>
+                            <p class="wow fadeInUp">Kami menyediakan solusi inovatif dalam pengelolaan sampah untuk kebutuhan rumah tangga, komersial, dan industri. Mulai dari pengumpulan hingga daur ulang, layanan kami memastikan pembuangan yang bertanggung jawab demi melindungi lingkungan sekaligus menciptakan komunitas yang lebih bersih dan berkelanjutan.</p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +185,7 @@
                             <h2>Our Vision</h2>
                         </div>
                         <div class="col-lg-8">
-                            <h3>To be a leading waste management service provider committed to protecting the environment and enhancing the quality of life for future generations. We strive to create a cleaner, healthier, and more sustainable world by implementing innovative waste management solutions that minimize environmental impact.</h3>
+                            <h3>Menjadi perusahaan pengelolaan sampah terpadu yang mewujudkan lingkungan bersih dan berkelanjutan melalui kolaborasi aktif dengan seluruh pemangku kepentingan.</h3>
                         </div>
                     </div>
                 </div>
@@ -209,11 +200,19 @@
                         </div>
                         <div class="col-lg-8">
                             <ul class="ul-check fw-600">
-                                <li>Deliver efficient, eco-friendly waste collection, recycling, and disposal services.</li>
-                                <li>Promote sustainability through waste reduction, reuse, and recycling initiatives.</li>
-                                <li>Ensure compliance with environmental regulations and best industry practices.</li>
-                                <li>Educate communities on responsible waste management and environmental stewardship.</li>
-                                <li>Utilize advanced technology to enhance waste management efficiency and sustainability.</li>
+                                <li><strong>Menciptakan Lingkungan Bersih</strong>
+Mengelola sampah secara terpadu, efektif, dan ramah lingkungan untuk menjaga kebersihan serta kesehatan masyarakat.</li>
+                                <li><strong>Mendorong Keberlanjutan</strong>
+Mengoptimalkan penerapan prinsip 3R (Reduce, Reuse, Recycle) dan ekonomi sirkular guna menghasilkan manfaat jangka panjang bagi lingkungan dan generasi mendatang.</li>
+                                <li><strong>Kolaborasi dengan Stakeholder</strong>
+Memperkuat sinergi dengan pemerintah, masyarakat, dunia usaha, dan akademisi dalam mendukung pengelolaan sampah yang terintegrasi.</li>
+                                <li><strong>Pemberdayaan dan Edukasi</strong>
+Memberikan edukasi, pelatihan, serta pendampingan kepada masyarakat dan mitra agar lebih berdaya dalam mengurangi dan mengelola sampah dari sumbernya.</li>
+                                <li><strong>Inovasi Hijau</strong>
+Mengembangkan inovasi teknologi pengolahan sampah yang ramah lingkungan serta bernilai tambah ekonomi dan sosial.</li>
+                                <li><strong>Kepatuhan dan Tata Kelola</strong>
+Menjalankan usaha sesuai dengan regulasi lingkungan hidup, standar kesehatan, serta prinsip tata kelola perusahaan yang baik (Good Corporate Governance)
+.</li>
                             </ul>
                         </div>
                     </div>
