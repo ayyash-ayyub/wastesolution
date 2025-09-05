@@ -50,8 +50,8 @@
                                 <!-- logo begin -->
                                 <div id="logo">
                                     <a href="{{ route('frontend.index') }}">
-                                        <img class="logo-main" src="images/logo-white.webp" alt="" >
-                                        <img class="logo-mobile" src="images/logo-white.webp" alt="" >
+                                        <img class="logo-main" src="{{ asset('images/logo-white.webp') }}" alt="" >
+                                        <img class="logo-mobile" src="{{ asset('images/logo-white.webp') }}" alt="" >
                                     </a>
                                 </div>
                                 <!-- logo end -->
@@ -136,7 +136,7 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url({{ asset('images/Banner1.webp') }})">
+                            <div class="swiper-inner" data-bgimage="url({{ asset('images/bannernya.webp') }})">
                                 <div class="sw-overlay op-1"></div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
 
                         <!-- Slides -->
                         {{-- <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/slider/4.jpg)">
+                            <div class="swiper-inner" data-bgimage="url({{ asset('images/slider/4.jpg') }})">
                                 <div class="sw-overlay op-1"></div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
 
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/slider/5.jpg)">
+                            <div class="swiper-inner" data-bgimage="url({{ asset('images/slider/5.jpg') }})">
                                 <div class="sw-overlay op-1"></div>
                             </div>
                         </div> --}}
@@ -169,17 +169,17 @@
                 <div class="wow fadeInRight d-flex">
                   <div class="de-marquee-list relative wow">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reduce</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reuse</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Recycle</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Management</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Organic Waste</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Composting</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                   </div>
                 </div>
             </section>
@@ -190,7 +190,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".0s">
-                                <img src="images/c.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/c.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Tonase sampah dapat dihitung dengan memisahkan kategori seperti organik, anorganik, B3, dan residu. Pendekatan ini membantu mengetahui volume tiap jenis sampah sehingga proses pengelolaan lebih terarah, misalnya organik untuk kompos, anorganik untuk daur ulang, dan B3 untuk perlakuan khusus.</div>
 
@@ -207,7 +207,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".3s">
-                                <img src="images/b.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/b.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Tonase juga bisa dicatat sesuai metode penanganan, seperti daur ulang, pengomposan, pembakaran, atau pembuangan ke TPA. Data ini memberikan gambaran efektivitas metode yang digunakan serta peluang pengurangan beban sampah di TPA.</div>
 
@@ -224,7 +224,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".6s">
-                                <img src="images/c.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/c.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Perhitungan tonase sampah menurut lokasi (rumah tangga, bisnis, industri, atau area publik) memberi pemahaman tentang sumber utama timbulan sampah. Informasi ini penting untuk menentukan strategi pengelolaan sesuai karakteristik lokasi.</div>
 
@@ -241,7 +241,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".9s">
-                                <img src="images/b.webp" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/b.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Selain jenis, metode, dan lokasi, tonase juga relevan jika dianalisis per periode waktu tertentu (harian, mingguan, bulanan). Hal ini memudahkan pemetaan tren kenaikan atau penurunan sampah sehingga perencanaan pengelolaan lebih akurat.</div>
 
@@ -278,7 +278,7 @@
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6">
                             <div class="wow zoomIn overflow-hidden">
-                                <img src="images/waste1000a.png" class="w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/waste1000a.png') }}" class="w-100 wow scaleIn" alt="">
                             </div>
                         </div>
 
@@ -286,7 +286,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
-                                        <img src="images/icons/phones.png" class="w-70px mb-4 wow scaleIn" alt="">
+                                        <img src="{{ asset('images/icons/phones.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
                                         <h4>Permintaan & Penjemputan</h4>
                                         <p>Sampah dijadwalkan untuk dijemput dan dikumpulkan dari rumah, bisnis, atau lokasi kerja.</p>
                                     </div>
@@ -294,7 +294,7 @@
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
-                                        <img src="images/icons/lorry.png" class="w-70px mb-4 wow scaleIn" alt="">
+                                        <img src="{{ asset('images/icons/lorry.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
                                         <h4>Transportasi</h4>
                                         <p>Sampah diangkut dengan aman menggunakan kendaraan khusus menuju fasilitas pengolahan atau pembuangan.</p>
                                     </div>
@@ -302,7 +302,7 @@
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
-                                        <img src="images/icons/recycle-bin.png" class="w-70px mb-4 wow scaleIn" alt="">
+                                        <img src="{{ asset('images/icons/recycle-bin.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
                                         <h4>Penyortiran & Pemrosesan</h4>
                                         <p>Sampah dipilah berdasarkan jenisnya dan diproses untuk didaur ulang, dijadikan kompos, atau dibuang.</p>
                                     </div>
@@ -310,7 +310,7 @@
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
-                                        <img src="images/icons/recycle.png" class="w-70px mb-4 wow scaleIn" alt="">
+                                        <img src="{{ asset('images/icons/recycle.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
                                         <h4>Pembuangan atau Daur Ulang</h4>
                                         <p>Sampah yang dapat didaur ulang digunakan kembali, sampah organik dijadikan kompos, dan sisanya dibuang atau dibakar dengan aman.</p>
                                     </div>
@@ -364,7 +364,7 @@
                         <div class="col-lg-12">
                             <div class="bg-color-2 jarallax text-light p-lg-5 p-4 relative overflow-hidden">
                                 <div class="sw-overlay op-3"></div>
-                                <img src="images/banner2.webp" class="jarallax-img" alt="">
+                                <img src="{{ asset('images/banner2.webp') }}" class="jarallax-img" alt="">
                                 <div class="row g-4 align-items-center justify-content-between">
                                     <div class="col-md-6 col-sm-6 relative">
                                         <div class="relative z-index-1000">
@@ -374,7 +374,7 @@
 
                                     {{-- <div class="col-md-3 col-sm-6">
                                         <div class="bg-color px-4 py-5 d-block text-center wow zoomIn" data-wow-delay=".6s">
-                                            <img src="images/icons/call.webp" class="w-40 mb-3" alt="">
+                                            <img src="{{ asset('images/icons/call.webp') }}" class="w-40 mb-3" alt="">
                                             <p class="lead mb-0">24 Hours</p>
                                             <h4 class="mb-0">+1 123 456 789</h4>
                                         </div>
@@ -403,7 +403,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/1.webp"> <div>Michael S.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/1.webp') }}"> <div>Michael S.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -419,7 +419,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/2.webp"> <div>Robert L.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/2.webp') }}"> <div>Robert L.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -435,7 +435,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/3.webp"> <div>Jake M.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/3.webp') }}"> <div>Jake M.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -451,7 +451,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/4.webp"> <div>Alex P.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/4.webp') }}"> <div>Alex P.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -467,7 +467,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/5.webp"> <div>Carlos R.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/5.webp') }}"> <div>Carlos R.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -483,7 +483,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/6.webp"> <div>Edward B.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/6.webp') }}"> <div>Edward B.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -499,7 +499,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/7.webp"> <div>Daniel H.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/7.webp') }}"> <div>Daniel H.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -515,7 +515,7 @@
                                 <div class="de_testi bg-white py-2 px-4">
                                     <blockquote>
                                         <div class="de_testi_by">
-                                            <img class="circle" alt="" src="images/testimonial/8.webp"> <div>Bryan G.<span>Customer</span></div>
+                                            <img class="circle" alt="" src="{{ asset('images/testimonial/8.webp') }}"> <div>Bryan G.<span>Customer</span></div>
                                         </div>
 
                                         <div class="abs top-0 end-0 p-4">
@@ -640,7 +640,7 @@
 
 
             <section class="relative overflow-hidden">
-                <img src="images/misc/recycle-crop.webp" class="w-20 abs end-0 bottom-0 z-3" alt="">
+                <img src="{{ asset('images/misc/recycle-crop.webp') }}" class="w-20 abs end-0 bottom-0 z-3" alt="">
                 <div class="container relative z-2">
                     <div class="row g-4 align-items-end">
                         <div class="col-lg-4">
@@ -665,17 +665,17 @@
 
                       <div class="de-marquee-list relative wow">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reduce</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reuse</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Recycle</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Waste Management</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Organic Waste</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Composting</span>
-                    <img src="images/logo-icon-line.webp" class="abs abs-middle w-40px" alt="">
+                    <img src="{{ asset('images/logo-icon-line.webp') }}" class="abs abs-middle w-40px" alt="">
                   </div>
                 </div>
             </section>
@@ -689,7 +689,7 @@
             <div class="container relative z-2">
                 <div class="row gx-5 relative z-2">
                     <div class="col-lg-4 col-sm-6">
-                        <img src="images/logo-white.webp" class="w-200px" alt="">
+                        <img src="{{ asset('images/logo-white.webp') }}" class="w-200px" alt="">
                         <div class="spacer-20"></div>
                         <p>We are committed to providing dependable, eco-friendly waste management solutions tailored to the unique needs of homes, businesses, and industries. By combining advanced technology with sustainable practices, we work to reduce environmental impact, increase efficiency, and support a cleaner, greener future for our communities and the planet.</p>
                     </div>
