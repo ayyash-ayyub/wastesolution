@@ -119,7 +119,7 @@
                             <div class="row g-4 align-items-center justify-content-between">
 
                                 <div class="col-lg-5">
-                                    <h1>Waste Management System(testing)</h1>
+                                    <h1>Waste Management System</h1>
                                 </div>
 
                                 <div class="col-lg-4">
