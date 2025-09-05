@@ -28,7 +28,7 @@
             </li>
         </ul>
 
-        
+
 
         <!-- Right navbar -->
         <ul class="navbar-nav ml-auto">
@@ -137,7 +137,7 @@
     </div>
 
     <footer class="main-footer small">
-        <div class="float-right d-none d-sm-inline">WMS</div>
+        <div class="float-right d-none d-sm-inline">Crafted with <i class="fas fa-heart text-danger"></i> by: <a href="https://terminalkoding.com" target="_blank" rel="noopener">Terminal Koding Teknologi</a></div>
         <strong>&copy; {{ date('Y') }} Waste Management Sistem</strong>
     </footer>
     <aside class="control-sidebar control-sidebar-dark"></aside>
