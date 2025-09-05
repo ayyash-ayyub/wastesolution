@@ -135,7 +135,7 @@
                             <div class="d-inline fs-14 fw-bold me-3">{{ $item->penulis }}</div>
                             <div class="d-inline fs-14 fw-600">
                                 <i class="fas fa-link me-2"></i>
-                                <a href="{{ $item->link_dokumen }}" target="_blank" rel="noopener">Dokumen</a>
+                                <a href="{{ $item->link_dokumen }}" target="_blank" rel="noopener">Link download Dokumen</a>
                             </div>
                         </div>
                         <div class="spacer-double"></div>
