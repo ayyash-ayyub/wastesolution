@@ -3,6 +3,34 @@
 
 <head>
 @include('frontend.partials.head', ['title' => 'Dahana WMS'])
+<style>
+  /* Hero tiles: mobile-first (flow in document, centered, can wrap) */
+  .hero-tiles { position: static; }
+  .hero-tiles .tiles-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 8px 12px;
+  }
+
+  /* Desktop: center absolutely over banner and force single line */
+  @media (min-width: 992px) {
+    #section-intro { min-height: 75vh; }
+    .hero-tiles {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      width: 100%;
+    }
+    .hero-tiles .tiles-row { flex-wrap: nowrap; }
+  }
+</style>
 </head>
 
 <body>
@@ -111,59 +139,62 @@
 
             <div id="top"></div>
 
-            <section id="section-intro" class="text-light no-top no-bottom relative overflow-hidden z-1000">
+            <section id="section-intro" class="text-light no-top no-bottom relative overflow-hidden z-1000" style="min-height: 75vh;">
 
                 <div class="v-center relative">
-                    <!-- Centered statistic tiles overlay -->
-                    <div class="abs abs-centered z-1000 w-100">
+                    <!-- Centered statistic tiles overlay (responsive) -->
+                    {{-- <div class="hero-tiles z-1000">
                         <div class="container">
-                            <div class="row g-2 justify-content-center" style="max-width: 780px; margin: 0 auto;">
+                            <div class="tiles-row">
                                 <div class="col-auto">
-                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
-                                        <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:20px"></i></div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
+                                        <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Master Limbah</div>
-                                        <div class="fw-bold">{{ $stats['master_limbah'] ?? 0 }}</div>
+                                        <div class="fw-bold fs-5">{{ $stats['master_limbah'] ?? 0 }}</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
-                                        <div class="mb-1"><i class="fa-solid fa-database" style="font-size:20px"></i></div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
+                                        <div class="mb-1"><i class="fa-solid fa-database" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Data Limbah</div>
-                                        <div class="fw-bold">{{ $stats['data_limbah'] ?? 0 }}</div>
+                                        <div class="fw-bold fs-5">{{ $stats['data_limbah'] ?? 0 }}</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
-                                        <div class="mb-1"><i class="fa-solid fa-screwdriver-wrench" style="font-size:20px"></i></div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
+                                        <div class="mb-1"><i class="fa-solid fa-screwdriver-wrench" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Metode</div>
-                                        <div class="fw-bold">{{ $stats['metode'] ?? 0 }}</div>
+                                        <div class="fw-bold fs-5">{{ $stats['metode'] ?? 0 }}</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
-                                        <div class="mb-1"><i class="fa-solid fa-location-dot" style="font-size:20px"></i></div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
+                                        <div class="mb-1"><i class="fa-solid fa-location-dot" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Lokasi</div>
-                                        <div class="fw-bold">{{ $stats['lokasi'] ?? 0 }}</div>
+                                        <div class="fw-bold fs-5">{{ $stats['lokasi'] ?? 0 }}</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
-                                        <div class="mb-1"><i class="fa-solid fa-file-lines" style="font-size:20px"></i></div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
+                                        <div class="mb-1"><i class="fa-solid fa-file-lines" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Pelaporan</div>
-                                        <div class="fw-bold">{{ $stats['pelaporan'] ?? 0 }}</div>
+                                        <div class="fw-bold fs-5">{{ $stats['pelaporan'] ?? 0 }}</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
-                                        <div class="mb-1"><i class="fa-solid fa-handshake" style="font-size:20px"></i></div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
+                                        <div class="mb-1"><i class="fa-solid fa-handshake" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Kemitraan</div>
-                                        <div class="fw-bold">{{ $stats['kemitraan'] ?? 0 }}</div>
+                                        <div class="fw-bold fs-5">{{ $stats['kemitraan'] ?? 0 }}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="abs bottom-10 z-1000 w-100">
+                    </div> --}}
+
+
+
+                    <div class="abs bottom-10 z-1000 w-100 d-none d-lg-block">
                         <div class="container">
                             <div class="row g-4 align-items-center justify-content-between">
 

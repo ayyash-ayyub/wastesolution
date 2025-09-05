@@ -81,7 +81,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Dashboard (protected)
-Route::middleware('auth')->group(function () {
+    Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         $jumlahLimbah = DataLimbah::count();
         $jumlahKategoriLimbah = MasterLimbah::query()->distinct('nama_kategori')->count('nama_kategori');
@@ -135,6 +135,7 @@ Route::middleware('auth')->group(function () {
             'totalKajian'
         ));
     })->name('dashboard');
+
 
     // Master Limbah CRUD
     Route::get('/master-limbah', [MasterLimbahController::class, 'index'])->name('master-limbah.index');
