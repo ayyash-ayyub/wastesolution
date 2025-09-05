@@ -185,7 +185,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="subtitle wow fadeInUp mb-3">Tentang kami</div>
-                            <h2 class="wow fadeInUp">dahanawastesolution</h2>
+                            <h2 class="wow fadeInUp">Dahana Waste Solution</h2>
                             <p class="wow fadeInUp">Kami menyediakan solusi inovatif dalam pengelolaan sampah untuk kebutuhan rumah tangga, komersial, dan industri. Mulai dari pengumpulan hingga daur ulang, layanan kami memastikan pembuangan yang bertanggung jawab demi melindungi lingkungan sekaligus menciptakan komunitas yang lebih bersih dan berkelanjutan.</p>
                         </div>
                     </div>

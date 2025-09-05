@@ -138,8 +138,8 @@
                                     <li><a href="index.html">Home</a></li>
                                     <li class="active">Our Team</li>
                                 </ul>
-                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Our Team</h1>
-                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Smart Waste Disposal for a Cleaner Future</p>
+                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Dahana Team</h1>
+                                <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">meet Danana Teams</p>
                                 <div class="spacer-double"></div>
                                 <div class="spacer-single sm-hide"></div>
 
@@ -156,10 +156,10 @@
                 <div class="container">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6 order-lg-1 order-2">
-                            <img src="images/logo-icon-color.webp" class="img-fluid wow scaleIn" alt="">
+                            <img src="images/logo-icon-color.webp" class="img-fluid w-50 wow scaleIn d-block mx-auto" alt="">
                         </div>
                         <div class="col-lg-5 order-lg-2 order-1">
-                            <div class="subtitle wow fadeInUp mb-3">About Company</div>
+                            <div class="subtitle wow fadeInUp mb-3">Dahana</div>
                             <h2 class="wow fadeInUp">Solusi Pengelolaan Sampah untuk Masa Depan</h2>
                             <p class="wow fadeInUp">
                                 Kami berfokus pada solusi inovatif pengelolaan sampah untuk kebutuhan rumah tangga, komersial, dan industri. Mulai dari pengumpulan hingga daur ulang, kami memastikan pembuangan yang bertanggung jawab demi melindungi lingkungan sekaligus menjaga kebersihan dan keberlanjutan komunitas.
