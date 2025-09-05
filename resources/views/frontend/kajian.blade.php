@@ -152,7 +152,7 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-6">
                             <!-- blog item begin -->
                             @foreach(($kajians ?? []) as $k)
                             <div class="mb-4 pb-4 border-bottom">
