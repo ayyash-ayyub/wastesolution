@@ -175,10 +175,10 @@
                     <div class="row gy-4 gx-5 align-items-center">
                         <div class="col-lg-6">
                             <div class="relative">
-                                <div class="bg-body w-90 overflow-hidden wow zoomIn">
-                                    <img src="images/logo-icon-color.webp" class="w-100 wow scaleIn" alt="">
+                                <div class="bg-body w-70 overflow-hidden wow zoomIn">
+                                    <img src="images/3.webp" class="w-100 wow scaleIn" alt="">
                                 </div>
-                                <div class="bg-body w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden wow zoomIn shadow-elegant" data-wow-delay=".2s">
+                                <div class="bg-body w-40 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden wow zoomIn shadow-elegant" data-wow-delay=".2s">
                                     <img src="images/logo-icon-color.webp" class="w-100 wow scaleIn" data-wow-delay=".2s" alt="">
                                 </div>
                             </div>

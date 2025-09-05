@@ -169,7 +169,7 @@
                                     <div class="col-md-6">
                                         <div class="mb-2">
                                             <img src="{{ asset('images/testimonial/1.webp') }}" class="w-20px me-2 circle" alt="">
-                                            <div class="d-inline fs-14 fw-bold me-3">{{ $k->penulis }}</div>
+                                            <div class="d-inline fs-14 fw-bold me-3">Penulis: {{ $k->penulis }}</div>
                                         </div>
                                         <h3><a class="text-dark" href="{{ route('frontend.kajian-single', $k->id) }}">{{ $k->judul }}</a></h3>
                                     </div>
