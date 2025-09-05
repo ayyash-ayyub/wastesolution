@@ -54,11 +54,12 @@
                             </li>
                             <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                             <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
+                            <li class="d-lg-none"><a class="menu-item" href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </div>
                     <div class="de-flex-col">
                         <div class="menu_side_area">
-                            <a href="{{ route('login') }}" class="btn-main">Login</a>
+                            <a href="{{ route('login') }}" class="btn-main d-none d-lg-inline-block">Login</a>
                             <span id="menu-btn"></span>
                         </div>
                         <div id="btn-extra">
