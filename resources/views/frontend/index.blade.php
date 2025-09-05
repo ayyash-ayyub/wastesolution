@@ -114,9 +114,62 @@
             <section id="section-intro" class="text-light no-top no-bottom relative overflow-hidden z-1000">
 
                 <div class="v-center relative">
+                    <!-- Centered statistic tiles overlay -->
+                    <div class="abs abs-centered z-1000 w-100">
+                        <div class="container">
+                            <div class="row g-2 justify-content-center" style="max-width: 780px; margin: 0 auto;">
+                                <div class="col-auto">
+                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
+                                        <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:20px"></i></div>
+                                        <div class="small opacity-75">Master Limbah</div>
+                                        <div class="fw-bold">{{ $stats['master_limbah'] ?? 0 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
+                                        <div class="mb-1"><i class="fa-solid fa-database" style="font-size:20px"></i></div>
+                                        <div class="small opacity-75">Data Limbah</div>
+                                        <div class="fw-bold">{{ $stats['data_limbah'] ?? 0 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
+                                        <div class="mb-1"><i class="fa-solid fa-screwdriver-wrench" style="font-size:20px"></i></div>
+                                        <div class="small opacity-75">Metode</div>
+                                        <div class="fw-bold">{{ $stats['metode'] ?? 0 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
+                                        <div class="mb-1"><i class="fa-solid fa-location-dot" style="font-size:20px"></i></div>
+                                        <div class="small opacity-75">Lokasi</div>
+                                        <div class="fw-bold">{{ $stats['lokasi'] ?? 0 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
+                                        <div class="mb-1"><i class="fa-solid fa-file-lines" style="font-size:20px"></i></div>
+                                        <div class="small opacity-75">Pelaporan</div>
+                                        <div class="fw-bold">{{ $stats['pelaporan'] ?? 0 }}</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-2 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 110px;">
+                                        <div class="mb-1"><i class="fa-solid fa-handshake" style="font-size:20px"></i></div>
+                                        <div class="small opacity-75">Kemitraan</div>
+                                        <div class="fw-bold">{{ $stats['kemitraan'] ?? 0 }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="abs bottom-10 z-1000 w-100">
                         <div class="container">
                             <div class="row g-4 align-items-center justify-content-between">
+
+
+
+
 
                                 <div class="col-lg-5">
                                     <h1>Waste Management System</h1>
@@ -241,7 +294,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".9s">
-                                <img src="{{ asset('images/point4.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/point1.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Selain jenis, metode, dan lokasi, tonase juga relevan jika dianalisis per periode waktu tertentu (harian, mingguan, bulanan). Hal ini memudahkan pemetaan tren kenaikan atau penurunan sampah sehingga perencanaan pengelolaan lebih akurat.</div>
 

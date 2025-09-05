@@ -15,6 +15,9 @@ use App\Models\MasterLimbah;
 use App\Models\MasterKemitraan;
 use App\Models\MasterKajian;
 use App\Models\MasterInventarisasi;
+use App\Models\MasterMetode;
+use App\Models\MasterLokasi;
+use App\Models\MasterPelaporan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,9 +32,21 @@ Route::name('frontend.')->group(function () {
         $jumlahKategoriLimbah = MasterLimbah::query()->distinct('nama_kategori')->count('nama_kategori');
         $totalKemitraan = MasterKemitraan::count();
         $totalKajian = MasterKajian::count();
-        return view('frontend.index', compact('jumlahLimbah','jumlahKategoriLimbah','totalKemitraan','totalKajian'));
+
+        $stats = [
+            'master_limbah' => MasterLimbah::count(),
+            'data_limbah'   => DataLimbah::count(),
+            'metode'        => MasterMetode::count(),
+            'lokasi'        => MasterLokasi::count(),
+            'pelaporan'     => MasterPelaporan::count(),
+            'kemitraan'     => MasterKemitraan::count(),
+        ];
+
+        return view('frontend.index', compact('jumlahLimbah','jumlahKategoriLimbah','totalKemitraan','totalKajian','stats'));
     })->name('index');
-    Route::get('/index.html', fn() => view('frontend.index'));
+    Route::get('/index.html', function () {
+        return redirect()->route('frontend.index');
+    });
     Route::get('/about', fn() => view('frontend.about'))->name('about');
     Route::get('/about.html', fn() => view('frontend.about'));
     Route::get('/kajian', function () {
