@@ -191,9 +191,9 @@
                                 </div>
                                 <div class="text-center mt-3">
                                     <div class="social-icons d-inline">
-                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="https://www.facebook.com/agnisakti"><i class="fa-brands fa-facebook-f"></i></a>
+
+                                        <a href="https://www.instagram.com/agnisakti/"><i class="fa-brands fa-instagram"></i></a>
                                     </div>
                                 </div>
                             </div>
