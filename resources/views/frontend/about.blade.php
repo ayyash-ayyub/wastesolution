@@ -10,6 +10,20 @@
     <style>
         /* Warna hijau gelap untuk semua <strong> pada laman ini */
         #wrapper strong { color: #0f5132; }
+
+        /* Samakan tinggi card pada section 'Tahukah anda?' */
+        .equal-cards > [class*="col-"] { display: flex; }
+        .equal-cards > [class*="col-"] > .p-40 {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Shadow elegan untuk gambar kedua pada blok gambar bertumpuk */
+        .shadow-elegant {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.22), 0 10px 10px rgba(0,0,0,0.18);
+            border-radius: 8px;
+        }
     </style>
 </head>
 
@@ -162,10 +176,10 @@
                         <div class="col-lg-6">
                             <div class="relative">
                                 <div class="bg-body w-90 overflow-hidden wow zoomIn">
-                                    <img src="images/misc/3.webp" class="w-100 wow scaleIn" alt="">
+                                    <img src="images/logo-icon-color.webp" class="w-100 wow scaleIn" alt="">
                                 </div>
-                                <div class="bg-body w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden wow zoomIn" data-wow-delay=".2s">
-                                    <img src="images/misc/2.webp" class="w-100 wow scaleIn" data-wow-delay=".2s" alt="">
+                                <div class="bg-body w-50 abs mb-min-50 end-0 bottom-0 z-2 overflow-hidden wow zoomIn shadow-elegant" data-wow-delay=".2s">
+                                    <img src="images/logo-icon-color.webp" class="w-100 wow scaleIn" data-wow-delay=".2s" alt="">
                                 </div>
                             </div>
                         </div>
@@ -180,7 +194,7 @@
 
             <section class="bg-dark text-light">
                 <div class="container">
-                    <div class="row g-4">
+                    <div class="row g-4 align-items-stretch equal-cards justify-content-center">
                         <div class="col-lg-4">
                             <h2>Our Vision</h2>
                         </div>
@@ -223,71 +237,54 @@ Menjalankan usaha sesuai dengan regulasi lingkungan hidup, standar kesehatan, se
                 <div class="container">
                     <div class="row g-4">
                         <div class="col-lg-4">
-                            <h2 class="mb-4">Why Choose Us?</h2>
+                            <h2 class="mb-4">Tahukah anda?</h2>
                         </div>
                     </div>
 
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".0s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".0s">
                             <div class="p-40 overlay-white-5">
                                 <i class="bg-color text-light fs-48 p-2 absolute id-color icon_check"></i>
                                 <div class="ps-80">
-                                    <h4>Eco-Friendly Focus</h4>
-                                    <p class="mb-0">Qui culpa qui consequat officia cillum quis irure aliquip ut dolore sit eu culpa ut irure nisi occaecat dolore adipisicing do pariatur.</p>
+                                    <h4>Limbah domestik</h4>
+                                    <p class="mb-0">Limbah domestik adalah sisa buangan yang berasal dari kegiatan rumah tangga, seperti sisa makanan, plastik, kertas, botol, dan air bekas cucian. Jenis limbah ini umumnya bersifat organik dan anorganik, dengan volume terbesar berasal dari permukiman dan aktivitas sehari-hari masyarakat.</p>
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                             <div class="p-40 overlay-white-5">
                                 <i class="bg-color text-light fs-48 p-2 absolute id-color icon_check"></i>
                                 <div class="ps-80">
-                                    <h4>Flexible Scheduling</h4>
-                                    <p class="mb-0">Qui culpa qui consequat officia cillum quis irure aliquip ut dolore sit eu culpa ut irure nisi occaecat dolore adipisicing do pariatur.</p>
+                                    <h4>Limbah B3</h4>
+                                    <p class="mb-0">Limbah B3 (Bahan Berbahaya dan Beracun) adalah limbah yang mengandung zat berbahaya yang dapat merusak lingkungan dan membahayakan kesehatan manusia, seperti limbah medis, pestisida, oli bekas, atau limbah kimia. Pengelolaan limbah B3 harus mengikuti aturan ketat, termasuk penyimpanan, transportasi, hingga proses pengolahan khusus.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                             <div class="p-40 overlay-white-5">
                                 <i class="bg-color text-light fs-48 p-2 absolute id-color icon_check"></i>
                                 <div class="ps-80">
-                                    <h4>Transparent Pricing</h4>
-                                    <p class="mb-0">Qui culpa qui consequat officia cillum quis irure aliquip ut dolore sit eu culpa ut irure nisi occaecat dolore adipisicing do pariatur.</p>
+                                    <h4>Limbah industri</h4>
+                                    <p class="mb-0">Limbah industri merupakan sisa hasil produksi dari kegiatan pabrik atau perusahaan, yang dapat berupa padat, cair, atau gas. Limbah ini biasanya mengandung bahan kimia atau zat berbahaya jika tidak diolah dengan baik, sehingga membutuhkan sistem pengelolaan khusus untuk mencegah pencemaran lingkungan.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".6s">
                             <div class="p-40 overlay-white-5">
                                 <i class="bg-dark text-light fs-48 p-2 absolute id-color icon_check"></i>
                                 <div class="ps-80">
-                                    <h4>Innovative Technology</h4>
-                                    <p class="mb-0">Qui culpa qui consequat officia cillum quis irure aliquip ut dolore sit eu culpa ut irure nisi occaecat dolore adipisicing do pariatur.</p>
+                                    <h4>Limbah NonB3</h4>
+                                    <p class="mb-0">Limbah NonB3 adalah limbah yang tidak mengandung bahan berbahaya dan beracun, seperti kertas, plastik, kayu, atau sisa material konstruksi. Meskipun tidak berbahaya, pengelolaan yang tidak tepat tetap dapat menimbulkan masalah lingkungan, sehingga perlu didaur ulang atau ditangani dengan metode ramah lingkungan.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                            <div class="p-40 overlay-white-5">
-                                <i class="bg-dark text-light fs-48 p-2 absolute id-color icon_check"></i>
-                                <div class="ps-80">
-                                    <h4>One Stop Solution</h4>
-                                    <p class="mb-0">Qui culpa qui consequat officia cillum quis irure aliquip ut dolore sit eu culpa ut irure nisi occaecat dolore adipisicing do pariatur.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1s">
-                            <div class="p-40 overlay-white-5">
-                                <i class="bg-dark text-light fs-48 p-2 absolute id-color icon_check"></i>
-                                <div class="ps-80">
-                                    <h4>Satisfaction Guarantee</h4>
-                                    <p class="mb-0">Qui culpa qui consequat officia cillum quis irure aliquip ut dolore sit eu culpa ut irure nisi occaecat dolore adipisicing do pariatur.</p>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>

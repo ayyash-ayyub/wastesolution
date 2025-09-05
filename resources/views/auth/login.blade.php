@@ -18,6 +18,7 @@
             <div class="col-md-5">
                 <div class="card shadow border-0">
                     <div class="card-header bg-white border-0 pt-4 pb-0 text-center">
+                        <img src="{{ asset('images/icon.webp') }}" alt="Logo" class="mb-2 d-block mx-auto rounded" style="width:72px;height:auto;" />
                         <h4 class="fw-semibold">Waste Management Sistem</h4>
                         <p class="text-muted mb-0">Silakan masuk ke akun Anda</p>
                     </div>
@@ -52,4 +53,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

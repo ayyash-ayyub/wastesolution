@@ -165,22 +165,23 @@
                             <div class="row g-4 gx-5">
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-clock me-2 id-color-2"></i>We're Open</div>
-                                    Senin - Jumat 08.00 - 18.00
+                                    Senin - Sabtu 08.00 - 18.00
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-map-marker-alt me-2 id-color-2"></i>Office Location</div>
-                                    Pamulang, Tangerang Selatan
+                                    Dukuh Bandongan Desa Kalisalak Kecamatan Batang Kabupaten Batang
+
                                 </div>
 
-                                <div class="col-lg-6">
+                                {{-- <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-phone me-2 id-color-2"></i>Call Us Directly</div>
-                                    +62 0000000
-                                </div>
+                                    +62 8222 6777 006
+                                </div> --}}
 
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-envelope me-2 id-color-2"></i>Send a Message</div>
-                                    agnisaktip@gmail.com
+                                    dahanasolusi@gmail.com
                                 </div>
                             </div>
 
@@ -190,36 +191,20 @@
 
                         <div class="col-lg-6">
                             <div class="p-40 bg-color-op-1">
-                                <h3>Get In Touch</h3>
+                                <h3>Hubungi via whatsapp</h3>
                                 <form name="contactForm" id="contact_form" class="form-underline position-relative z1000" method="post" action="contact.php">
 
-                                    <div class="field-set">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
-                                    </div>
 
-                                    <div class="field-set">
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" required>
-                                    </div>
-
-                                    <div class="field-set">
-                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" required>
-                                    </div>
-
-                                    <div class="field-set mb20">
-                                        <textarea name="message" id="message" class="form-control" placeholder="Your Message" required></textarea>
-                                    </div>
 
 
                                     <div id='submit' class="mt20">
-                                        <input type='submit' id='send_message' value='Send Message' class="btn-main">
+                                        <a href="https://wa.me/6282226777006" target="_blank" rel="noopener" class="btn-main d-inline-flex align-items-center gap-2">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                            <span>Hubungi via WhatsApp</span>
+                                        </a>
                                     </div>
 
-                                    <div id="success_message" class='success'>
-                                        Your message has been sent successfully. Refresh this page if you want to send more messages.
-                                    </div>
-                                    <div id="error_message" class='error'>
-                                        Sorry there was an error sending your form.
-                                    </div>
+
                                 </form>
                             </div>
                         </div>

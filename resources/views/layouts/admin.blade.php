@@ -28,6 +28,8 @@
             </li>
         </ul>
 
+        
+
         <!-- Right navbar -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
@@ -50,7 +52,8 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color:#1C4B41;">
         <!-- Brand Logo -->
-        <a href="{{ route('dashboard') }}" class="brand-link text-center bg-deep-green">
+        <a href="{{ route('dashboard') }}" class="brand-link text-center bg-deep-green d-flex align-items-center justify-content-center">
+            <img src="{{ asset('images/logo-icon.webp') }}" alt="Logo" class="brand-image mr-2" style="height:24px;width:auto;object-fit:contain;opacity:.95;">
             <span class="brand-text font-weight-light">Dahana WMS</span>
         </a>
 

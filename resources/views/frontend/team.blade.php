@@ -156,7 +156,7 @@
                 <div class="container">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6 order-lg-1 order-2">
-                            <img src="images/misc/1.webp" class="img-fluid wow scaleIn" alt="">
+                            <img src="images/logo-icon-color.webp" class="img-fluid wow scaleIn" alt="">
                         </div>
                         <div class="col-lg-5 order-lg-2 order-1">
                             <div class="subtitle wow fadeInUp mb-3">About Company</div>
@@ -172,9 +172,9 @@
                 </div>
             </section>
 
-            <section>
+            <section id="team">
                 <div class="container">
-                    <div class="row g-4">
+                    <div class="row g-4 justify-content-center">
 
                         <div class="col-lg-3 col-sm-6 wow fadeInRight" data-wow-delay=".0s">
                                 <div class="hover relative overflow-hidden text-light">
@@ -189,15 +189,14 @@
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
                                 </div>
-                            </div>
-                            <div class="text-center mt-3">
-                                <div class="social-icons d-inline">
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <div class="text-center mt-3">
+                                    <div class="social-icons d-inline">
+                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                         <div class="col-lg-3 col-sm-6 wow fadeInRight" data-wow-delay=".0s">
                             <div class="bg-color text-light overflow-hidden">
@@ -208,8 +207,8 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">Nama Staff B</h3>
-                                        Operations Manager
+                                        <h3 class="mb-2"> Rio Pamungkas</h3>
+                                        Chief Operational Officer
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
                                 </div>
@@ -232,8 +231,8 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">Nama Staff C</h3>
-                                        Waste Collection Supervisor
+                                        <h3 class="mb-2"> Iwan Budi Susanto</h3>
+                                        Senior Expert Spesialis
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
                                 </div>
@@ -247,29 +246,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-sm-6 wow fadeInRight" data-wow-delay=".0s">
-                            <div class="bg-color text-light overflow-hidden">
-                                <div class="hover relative overflow-hidden text-light">
-                                    <img src="images/team/4.webp" class="hover-scale-1-1 w-100" data-wow-delay=".0s" alt="">
-                                    <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered text-center p-30">
-                                        Focuses on customer satisfaction and service excellence.
-                                    </div>
-                                    <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
-                                    <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2">Nama Staff D</h3>
-                                        Customer Service Manager
-                                    </div>
-                                    <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
-                                </div>
-                            </div>
-                            <div class="text-center mt-3">
-                                <div class="social-icons d-inline">
-                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
+
 
                     </div>
                 </div>

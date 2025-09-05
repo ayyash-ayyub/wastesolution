@@ -6,9 +6,9 @@
                 <div class="col-lg-12">
                     <div class="d-flex justify-content-between xs-hide">
                         <div class="d-flex">
-                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-clock"></i>Senin - Jumat 08.00 - 18.00</a></div>
-                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-envelope"></i>agnisaktip@gmail.com</a></div>
-                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-phone"></i>+62 0000000</a></div>
+                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-clock"></i>Senin - Sabtu 08.00 - 18.00</a></div>
+                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-envelope"></i>dahanasolusi@gmail.com</a></div>
+                            <div class="topbar-widget me-3"><a href="#"><i class="fas fa-phone"></i>+62 8222 6777 006</a></div>
                         </div>
                         <div class="d-flex">
                             <div class="social-icons">
