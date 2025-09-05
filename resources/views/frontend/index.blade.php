@@ -136,7 +136,7 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <div class="swiper-inner" data-bgimage="url(images/Banner1.webp)">
+                            <div class="swiper-inner" data-bgimage="url({{ asset('images/Banner1.webp') }})">
                                 <div class="sw-overlay op-1"></div>
                             </div>
                         </div>
