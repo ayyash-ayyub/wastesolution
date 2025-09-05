@@ -18,7 +18,7 @@
         <!-- preloader end -->
 
         <!-- header begin -->
-        @include('frontend.partials.header', ['headerClass' => 'header-light'])
+        @include('frontend.partials.header', ['headerClass' => 'header-light', 'logoVariant' => 'black'])
         <header class="header-light" style="display:none">
             <div id="topbar">
                 <div class="container">

@@ -154,9 +154,9 @@
                                 <div class="spacer-single sm-hide"></div>
                                 <ul class="crumb">
                                     <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                                    <li class="active">About Us</li>
+                                    <li class="active">Tentang kami</li>
                                 </ul>
-                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">About Us</h1>
+                                <h1 class="mb-2 wow fadeInUp" data-wow-delay=".2s">Tentang kami</h1>
                                 <p class="col-lg-10 lead mb-0 wow fadeInUp" data-wow-delay=".3s">Solusi Pengelolaan Sampah untuk Masa Depan yang Lebih Bersih dan berkelanjutan</p>
                                 <div class="spacer-double"></div>
                                 <div class="spacer-single sm-hide"></div>
