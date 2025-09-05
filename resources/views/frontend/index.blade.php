@@ -190,7 +190,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".0s">
-                                <img src="{{ asset('images/c.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/point1.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Tonase sampah dapat dihitung dengan memisahkan kategori seperti organik, anorganik, B3, dan residu. Pendekatan ini membantu mengetahui volume tiap jenis sampah sehingga proses pengelolaan lebih terarah, misalnya organik untuk kompos, anorganik untuk daur ulang, dan B3 untuk perlakuan khusus.</div>
 
@@ -207,7 +207,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".3s">
-                                <img src="{{ asset('images/b.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/point2.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Tonase juga bisa dicatat sesuai metode penanganan, seperti daur ulang, pengomposan, pembakaran, atau pembuangan ke TPA. Data ini memberikan gambaran efektivitas metode yang digunakan serta peluang pengurangan beban sampah di TPA.</div>
 
@@ -224,7 +224,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".6s">
-                                <img src="{{ asset('images/c.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/point3.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Perhitungan tonase sampah menurut lokasi (rumah tangga, bisnis, industri, atau area publik) memberi pemahaman tentang sumber utama timbulan sampah. Informasi ini penting untuk menentukan strategi pengelolaan sesuai karakteristik lokasi.</div>
 
@@ -241,7 +241,7 @@
                         <!-- service item begin -->
                         <div class="col-lg-3 col-sm-6">
                             <div class="hover overflow-hidden relative text-light text-center wow fadeInRight" data-wow-delay=".9s">
-                                <img src="{{ asset('images/b.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
+                                <img src="{{ asset('images/point4.webp') }}" class="hover-scale-1-1 w-100 wow scaleIn" alt="">
                                 <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered">
                                     <div class="mb-3">Selain jenis, metode, dan lokasi, tonase juga relevan jika dianalisis per periode waktu tertentu (harian, mingguan, bulanan). Hal ini memudahkan pemetaan tren kenaikan atau penurunan sampah sehingga perencanaan pengelolaan lebih akurat.</div>
 
