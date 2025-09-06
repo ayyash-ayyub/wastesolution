@@ -40,6 +40,10 @@ Route::name('frontend.')->group(function () {
             'lokasi'        => MasterLokasi::count(),
             'pelaporan'     => MasterPelaporan::count(),
             'kemitraan'     => MasterKemitraan::count(),
+            // Tonase per sub_kategori_limbah
+            'sum_organik'   => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['organik'])->sum('tonasi') ?? 0),
+            'sum_anorganik' => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['anorganik'])->sum('tonasi') ?? 0),
+            'sum_residu'    => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['residu'])->sum('tonasi') ?? 0),
         ];
 
         return view('frontend.index', compact('jumlahLimbah','jumlahKategoriLimbah','totalKemitraan','totalKajian','stats'));

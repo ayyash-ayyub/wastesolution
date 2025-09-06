@@ -143,7 +143,7 @@
 
                 <div class="v-center relative">
                     <!-- Centered statistic tiles overlay (responsive) -->
-                    {{-- <div class="hero-tiles z-1000">
+                    <div class="hero-tiles z-1000">
                         <div class="container">
                             <div class="tiles-row">
                                 <div class="col-auto">
@@ -162,23 +162,23 @@
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
-                                        <div class="mb-1"><i class="fa-solid fa-screwdriver-wrench" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Metode</div>
-                                        <div class="fw-bold fs-5">{{ $stats['metode'] ?? 0 }}</div>
+                                        <div class="mb-1"><i class="fa-solid fa-leaf" style="font-size:26px"></i></div>
+                                        <div class="small opacity-75">Organik</div>
+                                        <div class="fw-bold fs-5">{{ number_format($stats['sum_organik'] ?? 0, 2) }} Ton / {{ number_format(($stats['sum_organik'] ?? 0) * 1000, 0) }} Kg</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
-                                        <div class="mb-1"><i class="fa-solid fa-location-dot" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Lokasi</div>
-                                        <div class="fw-bold fs-5">{{ $stats['lokasi'] ?? 0 }}</div>
+                                        <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
+                                        <div class="small opacity-75">Anorganik</div>
+                                        <div class="fw-bold fs-5">{{ number_format($stats['sum_anorganik'] ?? 0, 2) }} Ton / {{ number_format(($stats['sum_anorganik'] ?? 0) * 1000, 0) }} Kg</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
-                                        <div class="mb-1"><i class="fa-solid fa-file-lines" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Pelaporan</div>
-                                        <div class="fw-bold fs-5">{{ $stats['pelaporan'] ?? 0 }}</div>
+                                        <div class="mb-1"><i class="fa-solid fa-trash" style="font-size:26px"></i></div>
+                                        <div class="small opacity-75">Residu</div>
+                                        <div class="fw-bold fs-5">{{ number_format($stats['sum_residu'] ?? 0, 2) }} Ton / {{ number_format(($stats['sum_residu'] ?? 0) * 1000, 0) }} Kg</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -190,7 +190,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
 
 
 
