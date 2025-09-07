@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Master Pelaporan')
-@section('page_title', 'Master Pelaporan')
+@section('title', 'Data Pelaporan')
+@section('page_title', 'Data Pelaporan')
 
 @section('content')
 <div class="row">
@@ -11,7 +11,7 @@
     <div class="col-md-7">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title mb-0">Data Master Pelaporan</h3>
+                <h3 class="card-title mb-0">Data Pelaporan</h3>
             </div>
             <div class="card-body">
                 <form method="GET" action="{{ route('master-pelaporan.index') }}" class="mb-3">
@@ -58,11 +58,11 @@
                                     @endif
                                 </td>
                                 <td class="text-right">
-                                    <a href="{{ route('master-pelaporan.edit', $item) }}" class="text-warning mr-2" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('master-pelaporan.edit', $item) }}" class="text-warning mr-2" title="Edit Data"><i class="fas fa-edit"></i></a>
                                     <form action="{{ route('master-pelaporan.destroy', $item) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Hapus data ini?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Delete"><i class="fas fa-trash"></i></button>
+                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Hapus Data"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

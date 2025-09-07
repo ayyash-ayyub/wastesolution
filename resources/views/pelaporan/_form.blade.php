@@ -12,7 +12,7 @@
 
 <div class="card">
     <div class="card-header {{ $isEdit ? 'bg-warning' : '' }}">
-        <h3 class="card-title mb-0">{{ $isEdit ? 'Edit Master Pelaporan' : 'Tambah Master Pelaporan' }}</h3>
+        <h3 class="card-title mb-0">{{ $isEdit ? 'Edit Data Pelaporan' : 'Tambah Data Pelaporan' }}</h3>
     </div>
     <form action="{{ $action }}" method="POST">
         @csrf

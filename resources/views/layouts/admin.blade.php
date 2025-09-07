@@ -63,16 +63,11 @@
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-header">Master</li>
                     <li class="nav-item">
                         <a href="{{ route('master-limbah.index') }}" class="nav-link {{ request()->routeIs('master-limbah.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-recycle"></i>
                             <p>Master Limbah</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('data-limbah.index') }}" class="nav-link {{ request()->routeIs('data-limbah.*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-database"></i>
-                            <p>Data Limbah</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -87,10 +82,30 @@
                             <p>Master Lokasi</p>
                         </a>
                     </li>
+
+                    <li class="nav-header">Data</li>
+                    <li class="nav-item">
+                        <a href="{{ route('data-limbah.index') }}" class="nav-link {{ request()->routeIs('data-limbah.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-database"></i>
+                            <p>Data Limbah</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ route('master-pelaporan.index') }}" class="nav-link {{ request()->routeIs('master-pelaporan.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-file-alt"></i>
-                            <p>Master Pelaporan</p>
+                            <p>Data Pelaporan</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('master-kemitraan.index') }}" class="nav-link {{ request()->routeIs('master-kemitraan.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-handshake"></i>
+                            <p>Data Kemitraan</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('master-kajian.index') }}" class="nav-link {{ request()->routeIs('master-kajian.*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-newspaper"></i>
+                            <p>Data Kajian</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -99,20 +114,6 @@
                             <p>Master Inventarisasi</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('master-kemitraan.index') }}" class="nav-link {{ request()->routeIs('master-kemitraan.*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-handshake"></i>
-                            <p>Master Kemitraan</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('master-kajian.index') }}" class="nav-link {{ request()->routeIs('master-kajian.*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-newspaper"></i>
-                            <p>Master Kajian</p>
-                        </a>
-                    </li>
-
-
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Detail Kemitraan')
-@section('page_title', 'Detail Kemitraan')
+@section('title', 'Detail Data Kemitraan')
+@section('page_title', 'Detail Data Kemitraan')
 
 @section('content')
 <div class="row">
@@ -24,10 +24,9 @@
             </div>
             <div class="card-footer text-right">
                 <a href="{{ route('master-kemitraan.index') }}" class="btn btn-secondary">Kembali</a>
-                <a href="{{ route('master-kemitraan.edit', $item) }}" class="btn btn-warning">Edit</a>
+                <a href="{{ route('master-kemitraan.edit', $item) }}" class="btn btn-warning">Edit Data</a>
             </div>
         </div>
     </div>
 </div>
 @endsection
-

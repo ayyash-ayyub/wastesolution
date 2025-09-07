@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Master Kemitraan')
-@section('page_title', 'Master Kemitraan')
+@section('title', 'Data Kemitraan')
+@section('page_title', 'Data Kemitraan')
 
 @section('content')
 <div class="row">
@@ -35,12 +35,12 @@
                                 <td>{{ $item->nama_kegiatan }}</td>
                                 <td>{{ number_format($item->jumlah_penerima_manfaat) }}</td>
                                 <td class="text-right">
-                                    <a href="{{ route('master-kemitraan.show', $item) }}" class="text-info mr-2" title="View"><i class="fas fa-eye"></i></a>
-                                    <a href="{{ route('master-kemitraan.edit', $item) }}" class="text-warning mr-2" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('master-kemitraan.show', $item) }}" class="text-info mr-2" title="Detail"><i class="fas fa-eye"></i></a>
+                                    <a href="{{ route('master-kemitraan.edit', $item) }}" class="text-warning mr-2" title="Edit Data"><i class="fas fa-edit"></i></a>
                                     <form action="{{ route('master-kemitraan.destroy', $item) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Hapus data ini?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Delete"><i class="fas fa-trash"></i></button>
+                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Hapus Data"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

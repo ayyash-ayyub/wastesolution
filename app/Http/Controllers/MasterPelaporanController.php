@@ -42,7 +42,7 @@ class MasterPelaporanController extends Controller
         $validated['status'] = $validated['status'] ?? 'belum dilaporkan';
 
         MasterPelaporan::create($validated);
-        return redirect()->route('master-pelaporan.index')->with('status', 'Laporan berhasil disimpan');
+        return redirect()->route('master-pelaporan.index')->with('status', 'Data pelaporan berhasil disimpan');
     }
 
     public function edit(MasterPelaporan $master_pelaporan)
@@ -67,12 +67,12 @@ class MasterPelaporanController extends Controller
         $validated['status'] = $validated['status'] ?? 'belum dilaporkan';
 
         $master_pelaporan->update($validated);
-        return redirect()->route('master-pelaporan.index')->with('status', 'Laporan berhasil diperbarui');
+        return redirect()->route('master-pelaporan.index')->with('status', 'Data pelaporan berhasil diperbarui');
     }
 
     public function destroy(MasterPelaporan $master_pelaporan)
     {
         $master_pelaporan->delete();
-        return redirect()->route('master-pelaporan.index')->with('status', 'Laporan berhasil dihapus');
+        return redirect()->route('master-pelaporan.index')->with('status', 'Data pelaporan berhasil dihapus');
     }
 }

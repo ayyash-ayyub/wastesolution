@@ -23,7 +23,7 @@ class MasterKajianController extends Controller
         ]);
 
         MasterKajian::create($validated);
-        return redirect()->route('master-kajian.index')->with('status', 'Kajian berhasil disimpan');
+        return redirect()->route('master-kajian.index')->with('status', 'Data kajian berhasil disimpan');
     }
 
     public function edit(MasterKajian $master_kajian)
@@ -43,12 +43,12 @@ class MasterKajianController extends Controller
         ]);
 
         $master_kajian->update($validated);
-        return redirect()->route('master-kajian.index')->with('status', 'Kajian berhasil diperbarui');
+        return redirect()->route('master-kajian.index')->with('status', 'Data kajian berhasil diperbarui');
     }
 
     public function destroy(MasterKajian $master_kajian)
     {
         $master_kajian->delete();
-        return redirect()->route('master-kajian.index')->with('status', 'Kajian berhasil dihapus');
+        return redirect()->route('master-kajian.index')->with('status', 'Data kajian berhasil dihapus');
     }
 }

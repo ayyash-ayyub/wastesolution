@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Master Kajian')
-@section('page_title', 'Master Kajian')
+@section('title', 'Data Kajian')
+@section('page_title', 'Data Kajian')
 
 @section('content')
 <div class="row">
@@ -11,7 +11,7 @@
     <div class="col-md-7">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title mb-0">Data Master Kajian</h3>
+                <h3 class="card-title mb-0">Data Kajian</h3>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -33,11 +33,11 @@
                                 <td>{{ $item->penulis }}</td>
                                 <td><a href="{{ $item->link_dokumen }}" target="_blank">Dokumen</a></td>
                                 <td class="text-right">
-                                    <a href="{{ route('master-kajian.edit', $item) }}" class="text-warning mr-2" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('master-kajian.edit', $item) }}" class="text-warning mr-2" title="Edit Data"><i class="fas fa-edit"></i></a>
                                     <form action="{{ route('master-kajian.destroy', $item) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Hapus data ini?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Delete"><i class="fas fa-trash"></i></button>
+                                        <button type="submit" class="btn btn-link text-danger p-0 m-0" title="Hapus Data"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
