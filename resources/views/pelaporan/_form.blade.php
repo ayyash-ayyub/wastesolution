@@ -6,6 +6,7 @@
     $selesaiValue = old('periode_selesai', $isEdit ? $editItem->periode_selesai : '');
     $statusValue = old('status', $isEdit ? $editItem->status : 'belum dilaporkan');
     $ketValue = old('keterangan', $isEdit ? ($editItem->keterangan ?? '') : '');
+    $lampiranValue = old('lampiran_dokumen', $isEdit ? ($editItem->lampiran_dokumen ?? '') : '');
     $statuses = $statuses ?? ['sudah dilaporkan','belum dilaporkan'];
 @endphp
 
@@ -51,6 +52,11 @@
                         <option value="{{ $st }}" {{ $statusValue === $st ? 'selected' : '' }}>{{ ucfirst($st) }}</option>
                     @endforeach
                 </select>
+            </div>
+
+            <div class="form-group">
+                <label>Lampiran Dokumen (URL)</label>
+                <input type="url" name="lampiran_dokumen" class="form-control" value="{{ $lampiranValue }}" placeholder="https://contoh.com/dokumen.pdf">
             </div>
 
             <div class="form-group">

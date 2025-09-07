@@ -35,6 +35,7 @@
                             <th>Nama Laporan</th>
                             <th>Periode</th>
                             <th>Status</th>
+                            <th>Lampiran</th>
                             <th style="width: 140px" class="text-right">Aksi</th>
                         </tr>
                         </thead>
@@ -49,6 +50,13 @@
                                         {{ ucfirst($item->status) }}
                                     </span>
                                 </td>
+                                <td>
+                                    @if(!empty($item->lampiran_dokumen))
+                                        <a href="{{ $item->lampiran_dokumen }}" target="_blank" rel="noopener">Lihat</a>
+                                    @else
+                                        <span class="text-muted">-</span>
+                                    @endif
+                                </td>
                                 <td class="text-right">
                                     <a href="{{ route('master-pelaporan.edit', $item) }}" class="text-warning mr-2" title="Edit"><i class="fas fa-edit"></i></a>
                                     <form action="{{ route('master-pelaporan.destroy', $item) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Hapus data ini?')">
@@ -59,7 +67,7 @@
                                 </td>
                             </tr>
                         @empty
-                            <tr><td colspan="5" class="text-center p-3">Belum ada data</td></tr>
+                            <tr><td colspan="6" class="text-center p-3">Belum ada data</td></tr>
                         @endforelse
                         </tbody>
                     </table>

@@ -35,6 +35,7 @@ class MasterPelaporanController extends Controller
             'periode_mulai' => 'required|date',
             'periode_selesai' => 'required|date|after_or_equal:periode_mulai',
             'status' => 'nullable|string|in:' . implode(',', $this->statuses),
+            'lampiran_dokumen' => 'nullable|string|url',
             'keterangan' => 'nullable|string',
         ]);
 
@@ -59,6 +60,7 @@ class MasterPelaporanController extends Controller
             'periode_mulai' => 'required|date',
             'periode_selesai' => 'required|date|after_or_equal:periode_mulai',
             'status' => 'nullable|string|in:' . implode(',', $this->statuses),
+            'lampiran_dokumen' => 'nullable|string|url',
             'keterangan' => 'nullable|string',
         ]);
 

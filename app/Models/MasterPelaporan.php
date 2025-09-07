@@ -16,7 +16,7 @@ class MasterPelaporan extends Model
         'periode_mulai',
         'periode_selesai',
         'status',
+        'lampiran_dokumen',
         'keterangan',
     ];
 }
-
