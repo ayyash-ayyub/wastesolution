@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('master-inventarisasi.index') }}" class="nav-link {{ request()->routeIs('master-inventarisasi.*') ? 'active' : '' }}">
+                        <a href="#" class="nav-link disabled" tabindex="-1" aria-disabled="true" title="Dinonaktifkan" style="pointer-events: none; opacity: .6;">
                             <i class="nav-icon fas fa-clipboard-list"></i>
                             <p>Master Inventarisasi</p>
                         </a>
