@@ -188,6 +188,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('/master-kemitraan', [MasterKemitraanController::class, 'store'])->name('master-kemitraan.store');
     Route::get('/master-kemitraan/{master_kemitraan}/edit', [MasterKemitraanController::class, 'edit'])->name('master-kemitraan.edit');
     Route::put('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'update'])->name('master-kemitraan.update');
+    Route::delete('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'destroy'])->name('master-kemitraan.destroy');
     Route::get('/master-kemitraan/{master_kemitraan}', [MasterKemitraanController::class, 'show'])->name('master-kemitraan.show');
 
     // Master Kajian CRUD

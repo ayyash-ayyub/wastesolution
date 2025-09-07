@@ -56,5 +56,10 @@ class MasterKemitraanController extends Controller
     {
         return view('kemitraan.show', ['item' => $master_kemitraan]);
     }
-}
 
+    public function destroy(MasterKemitraan $master_kemitraan)
+    {
+        $master_kemitraan->delete();
+        return redirect()->route('master-kemitraan.index')->with('status', 'Data kemitraan berhasil dihapus');
+    }
+}
