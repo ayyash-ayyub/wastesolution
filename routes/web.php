@@ -45,9 +45,31 @@ Route::name('frontend.')->group(function () {
             'sum_anorganik' => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['anorganik'])->sum('tonasi') ?? 0),
             'sum_residu'    => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['residu'])->sum('tonasi') ?? 0),
             // Tonase per metode pengolahan
-            'sum_recycle'   => (float) (DataLimbah::whereRaw("LOWER(TRIM(metode)) = ?", ['recycle'])->sum('tonasi') ?? 0),
-            'sum_maggot'    => (float) (DataLimbah::whereRaw("LOWER(TRIM(metode)) = ?", ['maggot'])->sum('tonasi') ?? 0),
-            'sum_pirolisis' => (float) (DataLimbah::whereRaw("LOWER(TRIM(metode)) = ?", ['pirolisis'])->sum('tonasi') ?? 0),
+            'sum_recycle'   => (float) (DataLimbah::where(function($q){
+                                        $q->whereRaw("LOWER(TRIM(metode)) = 'recycle'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'recycling'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'daur ulang'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'daur-ulang'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'daurulang'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%recycle%'])
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%recycling%']);
+                                    })->sum('tonasi') ?? 0),
+            // Be tolerant to spelling/alias variations for maggot
+            'sum_maggot'    => (float) (DataLimbah::where(function($q){
+                                        $q->whereRaw("LOWER(TRIM(metode)) = 'maggot'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'magot'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%maggot%'])
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%magot%'])
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%bsf%'])
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%black soldier fly%']);
+                                    })->sum('tonasi') ?? 0),
+            'sum_pirolisis' => (float) (DataLimbah::where(function($q){
+                                        $q->whereRaw("LOWER(TRIM(metode)) = 'pirolisis'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'pyrolysis'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) = 'pyrolisis'")
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%pirolis%'])
+                                          ->orWhereRaw("LOWER(TRIM(metode)) LIKE ?", ['%pyroly%']);
+                                    })->sum('tonasi') ?? 0),
         ];
 
         // Lokasi sites for frontend map
@@ -306,6 +328,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     // Data Limbah CRUD
     Route::get('/data-limbah', [DataLimbahController::class, 'index'])->name('data-limbah.index');
+    Route::get('/data-limbah-export', [DataLimbahController::class, 'export'])->name('data-limbah.export');
     Route::post('/data-limbah', [DataLimbahController::class, 'store'])->name('data-limbah.store');
     Route::get('/data-limbah/{data_limbah}/edit', [DataLimbahController::class, 'edit'])->name('data-limbah.edit');
     Route::put('/data-limbah/{data_limbah}', [DataLimbahController::class, 'update'])->name('data-limbah.update');

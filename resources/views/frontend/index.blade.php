@@ -189,6 +189,8 @@
                                         <div class="small opacity-75">Pirolisis</div>
                                         <div class="fw-bold fs-6">{{ number_format(($stats['sum_pirolisis'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_pirolisis'] ?? 0) / 1000, 5) }} Ton)</div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>

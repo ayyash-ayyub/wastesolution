@@ -57,12 +57,50 @@ class DataLimbahController extends Controller
 
     public function index()
     {
-        $items = DataLimbah::with(['masterMetode','masterLokasi'])->orderByDesc('id')->get();
+        $items = DataLimbah::with(['masterMetode','masterLokasi'])
+            ->orderByDesc('id')
+            ->paginate(10)
+            ->withQueryString();
         $kategoriOptions = $this->kategoriOptions();
         $subKategoriMap = $this->subKategoriMap();
         $metodeMap = $this->metodeMap();
         $lokasiOptions = MasterLokasi::orderBy('nama_site')->get(['id','nama_site']);
         return view('datalimbah.index', compact('items', 'kategoriOptions', 'subKategoriMap', 'metodeMap', 'lokasiOptions'));
+    }
+
+    public function export(Request $request)
+    {
+        $filename = 'data-limbah-' . now()->format('Ymd_His') . '.csv';
+        $headers = [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => "attachment; filename=\"{$filename}\"",
+        ];
+
+        $callback = function() {
+            $handle = fopen('php://output', 'w');
+            // Header row
+            fputcsv($handle, ['ID','Nama Limbah','Kategori','Sub Kategori','Metode','Tonasi (Kg)','Lokasi','Dibuat','Diubah']);
+
+            DataLimbah::orderBy('id')->chunk(500, function($rows) use ($handle) {
+                foreach ($rows as $r) {
+                    fputcsv($handle, [
+                        $r->id,
+                        $r->nama_limbah,
+                        $r->kategori_limbah,
+                        $r->sub_kategori_limbah,
+                        $r->metode,
+                        (float) $r->tonasi,
+                        $r->lokasi,
+                        optional($r->created_at)->toDateTimeString(),
+                        optional($r->updated_at)->toDateTimeString(),
+                    ]);
+                }
+            });
+
+            fclose($handle);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 
     public function store(Request $request)
