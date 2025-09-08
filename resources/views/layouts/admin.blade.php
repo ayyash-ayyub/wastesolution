@@ -65,7 +65,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-header">Website</li>
                     <li class="nav-item">
-                        <a href="{{ route('frontend.index') }}" class="nav-link" target="_blank" rel="noopener">
+                        <a href="https://dahanawastesolution.com/" class="nav-link" target="_blank" rel="noopener">
                             <i class="nav-icon fas fa-globe"></i>
                             <p>Ke Website</p>
                         </a>
