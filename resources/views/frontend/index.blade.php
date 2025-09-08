@@ -172,21 +172,21 @@
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
                                         <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Tonase Recycle</div>
+                                        <div class="small opacity-75">Recycle</div>
                                         <div class="fw-bold fs-6">{{ number_format(($stats['sum_recycle'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_recycle'] ?? 0) / 1000, 5) }} Ton)</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
                                         <div class="mb-1"><i class="fa-solid fa-bug" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Tonase Maggot</div>
+                                        <div class="small opacity-75">Maggot</div>
                                         <div class="fw-bold fs-6">{{ number_format(($stats['sum_maggot'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_maggot'] ?? 0) / 1000, 5) }} Ton)</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
                                         <div class="mb-1"><i class="fa-solid fa-fire" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Tonase Pirolisis</div>
+                                        <div class="small opacity-75">Pirolisis</div>
                                         <div class="fw-bold fs-6">{{ number_format(($stats['sum_pirolisis'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_pirolisis'] ?? 0) / 1000, 5) }} Ton)</div>
                                     </div>
                                 </div>
@@ -386,7 +386,7 @@ sekaligus menjaga keberlanjutan alam yang lestari.</p>
                                     <div class="px-4 py-2">
                                         <img src="{{ asset('images/icons/lorry.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
                                         <h4>Transportasi</h4>
-                                        <p>Sampah diangkut dengan aman menuju fasilitas pengolahan atau pembuangan.</p>
+                                        <p>Sampah diangkut dengan aman menuju fasilitas pengolahan.</p>
                                     </div>
                                 </div>
 
