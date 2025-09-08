@@ -187,9 +187,10 @@
                         <tbody>
                             @forelse(($metodePerKategoriSub ?? []) as $row)
                                 @php
-                                    $ton = (float) ($row->total ?? 0);
-                                    $kg  = $ton * 1000;
-                                    $tonFmt = number_format($ton, 1, ',', '.');
+                                    // total from query is SUM(tonasi). Field tonasi disimpan dalam Kg.
+                                    $kg  = (float) ($row->total ?? 0);
+                                    $ton = $kg / 1000;
+                                    $tonFmt = number_format($ton, 2, ',', '.');
                                     $kgFmt  = number_format($kg, 0, ',', '.');
                                 @endphp
                                 <tr>
@@ -197,7 +198,7 @@
                                     <td>{{ $row->sub_kategori_limbah ?? '-' }}</td>
                                     <td>{{ $row->metode ?? '-' }}</td>
 
-                                     <td class="text-right"> {{ $kgFmt }} kg = {{ $tonFmt }} ton </td>
+                                     <td class="text-right">{{ $kgFmt }} kg / {{ $tonFmt }} ton</td>
                                 </tr>
                             @empty
                                 <tr><td colspan="4" class="text-center text-muted p-3">Belum ada data</td></tr>
