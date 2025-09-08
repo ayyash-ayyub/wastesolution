@@ -44,9 +44,16 @@ Route::name('frontend.')->group(function () {
             'sum_organik'   => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['organik'])->sum('tonasi') ?? 0),
             'sum_anorganik' => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['anorganik'])->sum('tonasi') ?? 0),
             'sum_residu'    => (float) (DataLimbah::whereRaw("LOWER(TRIM(sub_kategori_limbah)) = ?", ['residu'])->sum('tonasi') ?? 0),
+            // Tonase per metode pengolahan
+            'sum_recycle'   => (float) (DataLimbah::whereRaw("LOWER(TRIM(metode)) = ?", ['recycle'])->sum('tonasi') ?? 0),
+            'sum_maggot'    => (float) (DataLimbah::whereRaw("LOWER(TRIM(metode)) = ?", ['maggot'])->sum('tonasi') ?? 0),
+            'sum_pirolisis' => (float) (DataLimbah::whereRaw("LOWER(TRIM(metode)) = ?", ['pirolisis'])->sum('tonasi') ?? 0),
         ];
 
-        return view('frontend.index', compact('jumlahLimbah','jumlahKategoriLimbah','totalKemitraan','totalKajian','stats'));
+        // Lokasi sites for frontend map
+        $lokasiSites = MasterLokasi::orderBy('nama_site')->get(['nama_site','kordinat']);
+
+        return view('frontend.index', compact('jumlahLimbah','jumlahKategoriLimbah','totalKemitraan','totalKajian','stats','lokasiSites'));
     })->name('index');
     Route::get('/index.html', function () {
         return redirect()->route('frontend.index');
@@ -77,6 +84,99 @@ Route::name('frontend.')->group(function () {
     Route::get('/projects.html', fn() => view('frontend.projects'));
     Route::get('/team', fn() => view('frontend.team'))->name('team');
     Route::get('/team.html', fn() => view('frontend.team'));
+    Route::get('/data', function () {
+        // Summary counts
+        $jumlahLimbah = DataLimbah::count();
+        $jumlahKategoriLimbah = MasterLimbah::query()->distinct('nama_kategori')->count('nama_kategori');
+        $totalKemitraan = MasterKemitraan::count();
+        $totalKajian = MasterKajian::count();
+        // Aggregate datasets similar to dashboard but public
+        $tonasePerKategori = DataLimbah::select('kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->groupBy('kategori_limbah')
+            ->orderBy('kategori_limbah')
+            ->get();
+
+        $tonasePerLokasi = DataLimbah::select('lokasi', DB::raw('SUM(tonasi) as total'))
+            ->groupBy('lokasi')
+            ->orderBy('lokasi')
+            ->get();
+
+        $tonaseSubKategoriB3 = DataLimbah::select('sub_kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->whereRaw("LOWER(TRIM(kategori_limbah)) = ?", ['b3'])
+            ->groupBy('sub_kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->get();
+
+        $tonaseSubKategoriNonB3 = DataLimbah::select('sub_kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->where(function($q){
+                $q->whereRaw("LOWER(TRIM(kategori_limbah)) = ?", ['non b3'])
+                  ->orWhereRaw("LOWER(TRIM(kategori_limbah)) = ?", ['non-b3']);
+            })
+            ->groupBy('sub_kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->get();
+
+        $metodeB3NonB3 = DataLimbah::select(
+                'metode',
+                DB::raw("SUM(CASE WHEN LOWER(TRIM(kategori_limbah)) = 'b3' THEN 1 ELSE 0 END) as total_b3"),
+                DB::raw("SUM(CASE WHEN LOWER(TRIM(kategori_limbah)) IN ('non b3','non-b3') THEN 1 ELSE 0 END) as total_non_b3")
+            )
+            ->groupBy('metode')
+            ->orderBy('metode')
+            ->get();
+
+        $metodePerKategoriSub = DataLimbah::select(
+                'kategori_limbah',
+                'sub_kategori_limbah',
+                'metode',
+                DB::raw('SUM(tonasi) as total')
+            )
+            ->groupBy('kategori_limbah', 'sub_kategori_limbah', 'metode')
+            ->orderBy('kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->orderBy('metode')
+            ->get();
+
+        // Dynamic method list + lokasi matrix (tonase)
+        $methodList = DataLimbah::selectRaw("LOWER(TRIM(metode)) as metode")
+            ->whereNotNull('metode')
+            ->distinct()
+            ->orderBy('metode')
+            ->pluck('metode')
+            ->toArray();
+        $lokasis = DataLimbah::select('lokasi')->distinct()->pluck('lokasi');
+        $lokasiMatrix = [];
+        foreach ($lokasis as $lok) {
+            $row = [
+                'lokasi'     => $lok,
+                'organik'    => (float) (DataLimbah::where('lokasi',$lok)->whereRaw("LOWER(TRIM(sub_kategori_limbah)) = 'organik'")->sum('tonasi') ?? 0),
+                'anorganik'  => (float) (DataLimbah::where('lokasi',$lok)->whereRaw("LOWER(TRIM(sub_kategori_limbah)) = 'anorganik'")->sum('tonasi') ?? 0),
+                'residu'     => (float) (DataLimbah::where('lokasi',$lok)->whereRaw("LOWER(TRIM(sub_kategori_limbah)) = 'residu'")->sum('tonasi') ?? 0),
+            ];
+            foreach ($methodList as $mc) {
+                $row[$mc] = (float) (DataLimbah::where('lokasi',$lok)
+                    ->whereRaw("LOWER(TRIM(metode)) = ?", [$mc])
+                    ->sum('tonasi') ?? 0);
+            }
+            $lokasiMatrix[] = $row;
+        }
+
+        return view('frontend.data', compact(
+            'jumlahLimbah',
+            'jumlahKategoriLimbah',
+            'totalKemitraan',
+            'totalKajian',
+            'tonasePerKategori',
+            'tonasePerLokasi',
+            'tonaseSubKategoriB3',
+            'tonaseSubKategoriNonB3',
+            'metodeB3NonB3',
+            'metodePerKategoriSub',
+            'methodList',
+            'lokasiMatrix'
+        ));
+    })->name('data');
+    Route::get('/data.html', function(){ return redirect()->route('frontend.data'); });
 });
 
 // Auth routes
@@ -102,6 +202,22 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
             ->orderBy('sub_kategori_limbah')
             ->get();
 
+        // Split sub-kategori by kategori_limbah B3 vs Non B3
+        $tonaseSubKategoriB3 = DataLimbah::select('sub_kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->whereRaw("LOWER(TRIM(kategori_limbah)) = ?", ['b3'])
+            ->groupBy('sub_kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->get();
+
+        $tonaseSubKategoriNonB3 = DataLimbah::select('sub_kategori_limbah', DB::raw('SUM(tonasi) as total'))
+            ->where(function($q){
+                $q->whereRaw("LOWER(TRIM(kategori_limbah)) = ?", ['non b3'])
+                  ->orWhereRaw("LOWER(TRIM(kategori_limbah)) = ?", ['non-b3']);
+            })
+            ->groupBy('sub_kategori_limbah')
+            ->orderBy('sub_kategori_limbah')
+            ->get();
+
         $tonasePerLokasi = DataLimbah::select('lokasi', DB::raw('SUM(tonasi) as total'))
             ->groupBy('lokasi')
             ->orderBy('lokasi')
@@ -111,7 +227,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
                 'kategori_limbah',
                 'sub_kategori_limbah',
                 'metode',
-                DB::raw('COUNT(*) as total')
+                DB::raw('SUM(tonasi) as total')
             )
             ->groupBy('kategori_limbah', 'sub_kategori_limbah', 'metode')
             ->orderBy('kategori_limbah')
@@ -127,14 +243,54 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
             ->orderBy('sub_kategori')
             ->get();
 
+        // Metode Pengolahan: jumlah data per metode untuk B3 vs Non B3
+        $metodeB3NonB3 = DataLimbah::select(
+                'metode',
+                DB::raw("SUM(CASE WHEN LOWER(TRIM(kategori_limbah)) = 'b3' THEN 1 ELSE 0 END) as total_b3"),
+                DB::raw("SUM(CASE WHEN LOWER(TRIM(kategori_limbah)) IN ('non b3','non-b3') THEN 1 ELSE 0 END) as total_non_b3")
+            )
+            ->groupBy('metode')
+            ->orderBy('metode')
+            ->get();
+
+        // Matriks tonase berdasarkan lokasi (Jenis + Metode Pengolahan) - metode dinamis dari DB
+        $lokasis = DataLimbah::select('lokasi')->distinct()->pluck('lokasi');
+        $methodList = DataLimbah::selectRaw("LOWER(TRIM(metode)) as metode")
+            ->whereNotNull('metode')
+            ->distinct()
+            ->orderBy('metode')
+            ->pluck('metode')
+            ->toArray();
+
+        $lokasiMatrix = [];
+        foreach ($lokasis as $lok) {
+            $row = [
+                'lokasi'     => $lok,
+                'organik'    => (float) (DataLimbah::where('lokasi',$lok)->whereRaw("LOWER(TRIM(sub_kategori_limbah)) = 'organik'")->sum('tonasi') ?? 0),
+                'anorganik'  => (float) (DataLimbah::where('lokasi',$lok)->whereRaw("LOWER(TRIM(sub_kategori_limbah)) = 'anorganik'")->sum('tonasi') ?? 0),
+                'residu'     => (float) (DataLimbah::where('lokasi',$lok)->whereRaw("LOWER(TRIM(sub_kategori_limbah)) = 'residu'")->sum('tonasi') ?? 0),
+            ];
+            foreach ($methodList as $mc) {
+                $row[$mc] = (float) (DataLimbah::where('lokasi',$lok)
+                    ->whereRaw("LOWER(TRIM(metode)) = ?", [$mc])
+                    ->sum('tonasi') ?? 0);
+            }
+            $lokasiMatrix[] = $row;
+        }
+
         return view('dashboard', compact(
             'jumlahLimbah',
             'jumlahKategoriLimbah',
             'tonasePerKategori',
             'tonasePerSubKategori',
+            'tonaseSubKategoriB3',
+            'tonaseSubKategoriNonB3',
             'tonasePerLokasi',
             'metodePerKategoriSub',
             'invTonasePerSub',
+            'metodeB3NonB3',
+            'lokasiMatrix',
+            'methodList',
             'totalKemitraan',
             'totalKajian'
         ));

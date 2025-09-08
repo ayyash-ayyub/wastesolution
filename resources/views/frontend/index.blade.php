@@ -146,20 +146,7 @@
                     <div class="hero-tiles z-1000">
                         <div class="container">
                             <div class="tiles-row">
-                                <div class="col-auto">
-                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
-                                        <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Master Limbah</div>
-                                        <div class="fw-bold fs-5">{{ $stats['master_limbah'] ?? 0 }}</div>
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
-                                        <div class="mb-1"><i class="fa-solid fa-database" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Data Limbah</div>
-                                        <div class="fw-bold fs-5">{{ $stats['data_limbah'] ?? 0 }}</div>
-                                    </div>
-                                </div>
+
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
                                         <div class="mb-1"><i class="fa-solid fa-leaf" style="font-size:26px"></i></div>
@@ -181,11 +168,26 @@
                                         <div class="fw-bold fs-5">{{ number_format(($stats['sum_residu'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_residu'] ?? 0) / 1000, 5) }} Ton)</div>
                                     </div>
                                 </div>
+                                <!-- New method tonnage cards after Residu -->
                                 <div class="col-auto">
-                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
-                                        <div class="mb-1"><i class="fa-solid fa-handshake" style="font-size:26px"></i></div>
-                                        <div class="small opacity-75">Kemitraan</div>
-                                        <div class="fw-bold fs-5">{{ $stats['kemitraan'] ?? 0 }}</div>
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
+                                        <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
+                                        <div class="small opacity-75">Tonase Recycle</div>
+                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_recycle'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_recycle'] ?? 0) / 1000, 5) }} Ton)</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
+                                        <div class="mb-1"><i class="fa-solid fa-bug" style="font-size:26px"></i></div>
+                                        <div class="small opacity-75">Tonase Maggot</div>
+                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_maggot'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_maggot'] ?? 0) / 1000, 5) }} Ton)</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
+                                        <div class="mb-1"><i class="fa-solid fa-fire" style="font-size:26px"></i></div>
+                                        <div class="small opacity-75">Tonase Pirolisis</div>
+                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_pirolisis'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_pirolisis'] ?? 0) / 1000, 5) }} Ton)</div>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +251,8 @@
 
             </section>
 
-            <section aria-label="section" class="pt-4 pb-4 bg-color">
+
+            <section id="jalan" aria-label="section" class="pt-4 pb-4 bg-color">
                 <div class="wow fadeInRight d-flex">
                   <div class="de-marquee-list relative wow">
                     <span class="fs-36 lh-1 ms-5 me-2 p-4 text-white heading-font">Reduce</span>
@@ -353,7 +356,10 @@
                         </div>
 
                         <div class="col-lg-4">
-                            <p class="lead">Peduli pada komunitas dengan solusi cerdas pengelolaan sampah—membantu rumah, bisnis, dan industri tetap bersih sekaligus melindungi lingkungan setiap hari.</p>
+                            <p class="lead">Peduli lingkungan dengan solusi cerdas pengelolaan
+sampah menuju zero waste, mendukung pengolahan
+sampah rumah tangga, bisnis, dan industri agar tetap bersih,
+sekaligus menjaga keberlanjutan alam yang lestari.</p>
                         </div>
                     </div>
 
@@ -380,23 +386,29 @@
                                     <div class="px-4 py-2">
                                         <img src="{{ asset('images/icons/lorry.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
                                         <h4>Transportasi</h4>
-                                        <p>Sampah diangkut dengan aman menggunakan kendaraan khusus menuju fasilitas pengolahan atau pembuangan.</p>
+                                        <p>Sampah diangkut dengan aman menuju fasilitas pengolahan atau pembuangan.</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
                                         <img src="{{ asset('images/icons/recycle-bin.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
-                                        <h4>Penyortiran & Pemrosesan</h4>
-                                        <p>Sampah dipilah berdasarkan jenisnya dan diproses untuk didaur ulang, dijadikan kompos, atau dibuang.</p>
+                                        <h4>Penyortiran</h4>
+                                        <p>Sampah dipilah sesuai jenisnya
+melalui proses pemilahan yang dilakukan pada hari
+yang sama, sehingga memudahkan pengolahan lebih
+lanjut dan menjaga kebersihan lingkungan</p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="px-4 py-2">
                                         <img src="{{ asset('images/icons/recycle.png') }}" class="w-70px mb-4 wow scaleIn" alt="">
-                                        <h4>Pembuangan atau Daur Ulang</h4>
-                                        <p>Sampah yang dapat didaur ulang digunakan kembali, sampah organik dijadikan kompos, dan sisanya dibuang atau dibakar dengan aman.</p>
+                                        <h4>Pemprosesan</h4>
+                                        <p>sampah diproses untuk didaur
+ulang, kompos, maggot, pirolisis dan proses
+pengolahan lainnya yang aman untuk
+lingkungan.</p>
                                     </div>
                                 </div>
                             </div>
@@ -409,19 +421,7 @@
 
             <section id="tonase" class="pt-100 bg-dark text-light">
                 <div class="container">
-                    <div class="row g-4 mb-sm-30">
-                        <div class="col-md-3 col-6">
-                            <div class="de_count text-center pl-50 fs-15 wow fadeInRight" data-wow-delay=".0s">
-                                <h2 class="fs-48 mb-2"><span class="timer fs-40" data-to="{{ (int)($jumlahLimbah ?? 0) }}" data-speed="3000">0</span><span class="id-color">+</span></h2>
-                                Jumlah Limbah
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <div class="de_count text-center pl-50 fs-15 wow fadeInRight" data-wow-delay=".2s">
-                                <h2 class="fs-48 mb-2"><span class="timer fs-40" data-to="{{ (int)($jumlahKategoriLimbah ?? 0) }}" data-speed="3000">0</span><span class="id-color">+</span></h2>
-                                Jumlah Kategori Limbah
-                            </div>
-                        </div>
+                    <div class="row g-4 mb-sm-30 justify-content-center">
                         <div class="col-md-3 col-6">
                             <div class="de_count text-center pl-50 fs-15 wow fadeInRight" data-wow-delay=".4s">
                                 <h2 class="fs-48 mb-2"><span class="timer fs-40" data-to="{{ (int)($totalKemitraan ?? 0) }}" data-speed="3000">0</span><span class="id-color">+</span></h2>
@@ -727,19 +727,11 @@
                 <img src="{{ asset('images/misc/recycle-crop.webp') }}" class="w-20 abs end-0 bottom-0 z-3" alt="">
                 <div class="container relative z-2">
                     <div class="row g-4 align-items-end">
-                        <div class="col-lg-4">
-                            <div class="subtitle">Misi kami</div>
-                            <h2>Mengelola sampah demi lingkungan yang bersih.</h2>
+                        <div class="col-lg-12">
+                            <div class="subtitle"></div>
+
                         </div>
-                        <div class="col-lg-8">
-                            <ul class="ul-check">
-                                <li>Digitalisasi pengelolaan sampah untuk mempermudah pemantauan dan penjadwalan penjemputan.</li>
-                                <li>Penyediaan informasi dan kajian berbasis data untuk mendukung keputusan dan edukasi masyarakat.</li>
-                                <li>Sistem penyortiran otomatis berdasarkan kategori sampah organik, anorganik, dan B3.</li>
-                                <li>Integrasi proses daur ulang dalam alur sistem untuk mengurangi volume sampah ke TPA.</li>
-                                <li>Pemantauan berbasis data untuk mendukung kebijakan berkelanjutan dalam pengelolaan sampah.</li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </section>

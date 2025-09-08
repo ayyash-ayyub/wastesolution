@@ -26,7 +26,7 @@
                         <div class="col-lg-12">
                             <div class="d-flex justify-content-between xs-hide">
                                 <div class="d-flex">
-                                    <div class="topbar-widget me-3"><a href="#"><i class="fas fa-clock"></i>Monday - Friday 08.00 - 18.00</a></div>
+                                    <div class="topbar-widget me-3"><a href="#"><i class="fas fa-clock"></i>Monday - Friday 08.00 - 17.00</a></div>
                                     <div class="topbar-widget me-3"><a href="#"><i class="fas fa-map-marker-alt"></i>100 S Main St, New York, NY</a></div>
                                     <div class="topbar-widget me-3"><a href="#"><i class="fas fa-phone"></i>+1 123 456 789</a></div>
                                 </div>
@@ -165,7 +165,7 @@
                             <div class="row g-4 gx-5">
                                 <div class="col-lg-6">
                                     <div class="fw-bold text-dark"><i class="fas fa-clock me-2 id-color-2"></i>We're Open</div>
-                                    Senin - Sabtu 08.00 - 18.00
+                                    Senin - Sabtu 08.00 - 17.00
                                 </div>
 
                                 <div class="col-lg-6">
