@@ -196,7 +196,8 @@
                                     <td>{{ $row->kategori_limbah ?? '-' }}</td>
                                     <td>{{ $row->sub_kategori_limbah ?? '-' }}</td>
                                     <td>{{ $row->metode ?? '-' }}</td>
-                                    <td class="text-right">{{ $tonFmt }} ton / {{ $kgFmt }} kg</td>
+
+                                     <td class="text-right"> {{ $kgFmt }} kg = {{ $tonFmt }} ton </td>
                                 </tr>
                             @empty
                                 <tr><td colspan="4" class="text-center text-muted p-3">Belum ada data</td></tr>
@@ -268,12 +269,16 @@
                             font: { size: 10, weight: 'bold' },
                             formatter: (value, ctx) => {
                                 const v = Number(value || 0);
-                                return v.toLocaleString(undefined,{maximumFractionDigits:2}) + ' Ton';
+                                return v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) + ' Ton';
                             }
                         },
                         tooltip: {
                             callbacks: {
-                                label: (ctx) => `${ctx.label}: ${ctx.formattedValue} Ton`
+                                label: (ctx) => {
+                                    const v = Number(ctx.parsed);
+                                    const s = v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+                                    return `${ctx.label}: ${s} Ton`;
+                                }
                             }
                         }
                     }
@@ -310,7 +315,7 @@
                             clamp: true,
                             formatter: (value, ctx) => {
                                 const v = Number(value || 0);
-                                return v.toLocaleString(undefined,{maximumFractionDigits:2}) + ' Ton';
+                                return v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) + ' Ton';
                             }
                         },
                         tooltip: (ctxId === 'chartInvTonaseSub') ? {
@@ -318,8 +323,8 @@
                                 label: (ctx) => {
                                     const ton = ctx.parsed.y ?? 0;
                                     const kg = (ton * 1000);
-                                    const tonStr = ton.toLocaleString(undefined,{minimumFractionDigits:0, maximumFractionDigits:2});
-                                    const kgStr = kg.toLocaleString(undefined,{minimumFractionDigits:0, maximumFractionDigits:2});
+                                    const tonStr = ton.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+                                    const kgStr = kg.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
                                     return `${ctx.label}: ${tonStr} Ton (${kgStr} Kg)`;
                                 }
                             }

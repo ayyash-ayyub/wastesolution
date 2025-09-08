@@ -55,17 +55,29 @@ class DataLimbahController extends Controller
         return $map;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $items = DataLimbah::with(['masterMetode','masterLokasi'])
-            ->orderByDesc('id')
-            ->paginate(10)
-            ->withQueryString();
+        $query = DataLimbah::with(['masterMetode','masterLokasi'])
+            ->orderByDesc('id');
+
+        $search = trim((string) $request->input('q', ''));
+        if ($search !== '') {
+            $query->where(function($q) use ($search) {
+                $like = '%' . str_replace(['%','_'], ['\%','\_'], $search) . '%';
+                $q->where('nama_limbah', 'like', $like)
+                  ->orWhere('kategori_limbah', 'like', $like)
+                  ->orWhere('sub_kategori_limbah', 'like', $like)
+                  ->orWhere('metode', 'like', $like)
+                  ->orWhere('lokasi', 'like', $like);
+            });
+        }
+
+        $items = $query->paginate(10)->withQueryString();
         $kategoriOptions = $this->kategoriOptions();
         $subKategoriMap = $this->subKategoriMap();
         $metodeMap = $this->metodeMap();
         $lokasiOptions = MasterLokasi::orderBy('nama_site')->get(['id','nama_site']);
-        return view('datalimbah.index', compact('items', 'kategoriOptions', 'subKategoriMap', 'metodeMap', 'lokasiOptions'));
+        return view('datalimbah.index', compact('items', 'kategoriOptions', 'subKategoriMap', 'metodeMap', 'lokasiOptions', 'search'));
     }
 
     public function export(Request $request)

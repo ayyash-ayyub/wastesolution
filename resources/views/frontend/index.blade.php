@@ -151,21 +151,21 @@
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
                                         <div class="mb-1"><i class="fa-solid fa-leaf" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Sampah Organik</div>
-                                        <div class="fw-bold fs-5">{{ number_format(($stats['sum_organik'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_organik'] ?? 0) / 1000, 5) }} Ton)</div>
+                                        <div class="fw-bold fs-5">{{ number_format(($stats['sum_organik'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_organik'] ?? 0) / 1000, 2) }} Ton)</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
                                         <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Sampah Anorganik</div>
-                                        <div class="fw-bold fs-5">{{ number_format(($stats['sum_anorganik'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_anorganik'] ?? 0) / 1000, 5) }} Ton)</div>
+                                        <div class="fw-bold fs-5">{{ number_format(($stats['sum_anorganik'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_anorganik'] ?? 0) / 1000, 2) }} Ton)</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 140px;">
                                         <div class="mb-1"><i class="fa-solid fa-trash" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Sampah Residu</div>
-                                        <div class="fw-bold fs-5">{{ number_format(($stats['sum_residu'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_residu'] ?? 0) / 1000, 5) }} Ton)</div>
+                                        <div class="fw-bold fs-5">{{ number_format(($stats['sum_residu'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_residu'] ?? 0) / 1000, 2) }} Ton)</div>
                                     </div>
                                 </div>
                                 <!-- New method tonnage cards after Residu -->
@@ -173,21 +173,21 @@
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
                                         <div class="mb-1"><i class="fa-solid fa-recycle" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Recycle</div>
-                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_recycle'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_recycle'] ?? 0) / 1000, 5) }} Ton)</div>
+                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_recycle'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_recycle'] ?? 0) / 1000, 2) }} Ton)</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
                                         <div class="mb-1"><i class="fa-solid fa-bug" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Maggot</div>
-                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_maggot'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_maggot'] ?? 0) / 1000, 5) }} Ton)</div>
+                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_maggot'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_maggot'] ?? 0) / 1000, 2) }} Ton)</div>
                                     </div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="p-3 text-center text-light rounded" style="background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.25); min-width: 160px;">
                                         <div class="mb-1"><i class="fa-solid fa-fire" style="font-size:26px"></i></div>
                                         <div class="small opacity-75">Pirolisis</div>
-                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_pirolisis'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_pirolisis'] ?? 0) / 1000, 5) }} Ton)</div>
+                                        <div class="fw-bold fs-6">{{ number_format(($stats['sum_pirolisis'] ?? 0), 2) }} Kg ({{ number_format(($stats['sum_pirolisis'] ?? 0) / 1000, 2) }} Ton)</div>
                                     </div>
 
 

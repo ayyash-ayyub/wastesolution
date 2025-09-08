@@ -10,11 +10,24 @@
     </div>
     <div class="col-md-7">
         <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h3 class="card-title mb-0">Daftar Data Limbah</h3>
-                <a href="{{ route('data-limbah.export') }}" class="btn btn-sm btn-success">
-                    <i class="fas fa-file-excel mr-1"></i> Download file CSV
-                </a>
+            <div class="card-header d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                <h3 class="card-title mb-2 mb-md-0">Daftar Data Limbah</h3>
+                <div class="d-flex align-items-center">
+                    <form action="{{ route('data-limbah.index') }}" method="get" class="form-inline mr-2">
+                        <div class="input-group input-group-sm">
+                            <input type="text" name="q" value="{{ $search ?? request('q') }}" class="form-control" placeholder="Cari nama, kategori, metode, lokasi...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                    @if(($search ?? request('q')))
+                        <a href="{{ route('data-limbah.index') }}" class="btn btn-sm btn-outline-secondary mr-2">Reset</a>
+                    @endif
+                    <a href="{{ route('data-limbah.export') }}" class="btn btn-sm btn-success">
+                        <i class="fas fa-file-excel mr-1"></i> Download file CSV
+                    </a>
+                </div>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
