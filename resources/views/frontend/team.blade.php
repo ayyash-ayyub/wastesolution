@@ -201,7 +201,7 @@
                         <div class="col-lg-3 col-sm-6 wow fadeInRight" data-wow-delay=".0s">
                             <div class="bg-color text-light overflow-hidden">
                                 <div class="hover relative overflow-hidden text-light">
-                                    <img src="images/2.webp" class="hover-scale-1-1 w-100" data-wow-delay=".0s" alt="">
+                                    <img src="images/team/3.webp" class="hover-scale-1-1 w-100" data-wow-delay=".0s" alt="">
                                     <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered text-center p-30">
                                         Oversees daily operations, ensuring efficiency in waste collection and disposal.
                                     </div>
@@ -225,7 +225,7 @@
                         <div class="col-lg-3 col-sm-6 wow fadeInRight" data-wow-delay=".0s">
                             <div class="bg-color text-light overflow-hidden">
                                 <div class="hover relative overflow-hidden text-light">
-                                    <img src="images/team/3.webp" class="hover-scale-1-1 w-100" data-wow-delay=".0s" alt="">
+                                    <img src="images/2.webp" class="hover-scale-1-1 w-100" data-wow-delay=".0s" alt="">
                                     <div class="abs w-100 px-4 hover-op-1 z-4 hover-mt-40 abs-centered text-center p-30">
                                         Manages waste collection teams and optimizes route scheduling.
                                     </div>
