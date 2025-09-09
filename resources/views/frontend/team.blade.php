@@ -231,7 +231,7 @@
                                     </div>
                                     <div class="abs bg-color z-2 top-0 w-100 h-100 hover-op-1"></div>
                                     <div class="abs z-2 bottom-0 mb-3 w-100 hover-op-0 p-30">
-                                        <h3 class="mb-2"> Iwan Budi Susanto</h3>
+                                        <h3 class="mb-2"> Iwan Budisusanto</h3>
                                         Senior Expert Spesialis
                                     </div>
                                     <div class="gradient-trans-color-bottom abs w-100 h-40 bottom-0 Z-1"></div>
