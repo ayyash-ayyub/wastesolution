@@ -329,6 +329,13 @@
                 const ctx = document.getElementById(ctxId);
                 if (!ctx) return;
                 if (typeof ChartDataLabels !== 'undefined') Chart.register(ChartDataLabels);
+                const isKg = (
+                    ctxId === 'chartTonaseKategori' ||
+                    ctxId === 'chartTonaseLokasi' ||
+                    ctxId === 'chartTonaseSubKategoriB3' ||
+                    ctxId === 'chartTonaseSubKategoriNonB3'
+                );
+                const unitLabel = isKg ? ' Kg' : ' Ton';
                 new Chart(ctx, {
                     type: 'bar',
                     data: { labels, datasets: [{ label: 'Tonase', data, backgroundColor: labels.map((_,i)=> palette[i % palette.length]) }] },
@@ -339,7 +346,12 @@
                         plugins: {
                             legend: { display: showLegend },
                             datalabels: { anchor: horizontal ? 'end' : 'end', align: horizontal ? 'right' : 'top', clamp: true,
-                                formatter: v => Number(v||0).toLocaleString(undefined,{maximumFractionDigits:2}) + ' Ton' }
+                                formatter: v => Number(v||0).toLocaleString(undefined,{maximumFractionDigits:2}) + unitLabel },
+                            tooltip: isKg ? { callbacks: { label: (ctx) => {
+                                const v = (ctx.parsed.y ?? ctx.parsed.x ?? 0);
+                                const s = Number(v).toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+                                return `${ctx.label}: ${s} Kg`;
+                            } } } : { }
                         },
                         scales: { x: { beginAtZero: true, ticks: { autoSkip: true } }, y: { beginAtZero: true } }
                     }

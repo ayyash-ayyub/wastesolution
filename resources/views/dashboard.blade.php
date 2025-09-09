@@ -294,6 +294,13 @@
                 Chart.register(ChartDataLabels);
             }
             const isSubBar = (ctxId === 'chartTonaseSubKategoriB3' || ctxId === 'chartTonaseSubKategoriNonB3');
+            const isKg = (
+                ctxId === 'chartTonaseLokasi' ||
+                ctxId === 'chartTonaseKategori' ||
+                ctxId === 'chartTonaseSubKategoriB3' ||
+                ctxId === 'chartTonaseSubKategoriNonB3'
+            );
+            const unitLabel = isKg ? ' Kg' : ' Ton';
             new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -316,7 +323,7 @@
                             clamp: true,
                             formatter: (value, ctx) => {
                                 const v = Number(value || 0);
-                                return v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) + ' Ton';
+                                return v.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2}) + unitLabel;
                             }
                         },
                         tooltip: (ctxId === 'chartInvTonaseSub') ? {
@@ -327,6 +334,14 @@
                                     const tonStr = ton.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
                                     const kgStr = kg.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
                                     return `${ctx.label}: ${tonStr} Ton (${kgStr} Kg)`;
+                                }
+                            }
+                        } : (isKg) ? {
+                            callbacks: {
+                                label: (ctx) => {
+                                    const v = (ctx.parsed.y ?? ctx.parsed.x ?? 0);
+                                    const s = Number(v).toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2});
+                                    return `${ctx.label}: ${s} Kg`;
                                 }
                             }
                         } : { }
