@@ -161,15 +161,31 @@ class DataLimbahController extends Controller
         return redirect()->route('data-limbah.index')->with('status', 'Data limbah berhasil disimpan');
     }
 
-    public function edit(DataLimbah $data_limbah)
+    public function edit(Request $request, DataLimbah $data_limbah)
     {
-        $items = DataLimbah::with(['masterMetode','masterLokasi'])->orderByDesc('id')->get();
+        // Keep list consistent with index (pagination + optional search)
+        $query = DataLimbah::with(['masterMetode','masterLokasi'])
+            ->orderByDesc('id');
+
+        $search = trim((string) $request->input('q', ''));
+        if ($search !== '') {
+            $query->where(function($q) use ($search) {
+                $like = '%' . str_replace(['%','_'], ['\\%','\\_'], $search) . '%';
+                $q->where('nama_limbah', 'like', $like)
+                  ->orWhere('kategori_limbah', 'like', $like)
+                  ->orWhere('sub_kategori_limbah', 'like', $like)
+                  ->orWhere('metode', 'like', $like)
+                  ->orWhere('lokasi', 'like', $like);
+            });
+        }
+
+        $items = $query->paginate(10)->withQueryString();
         $kategoriOptions = $this->kategoriOptions();
         $subKategoriMap = $this->subKategoriMap();
         $metodeMap = $this->metodeMap();
         $lokasiOptions = MasterLokasi::orderBy('nama_site')->get(['id','nama_site']);
         $editItem = $data_limbah;
-        return view('datalimbah.index', compact('items', 'kategoriOptions', 'subKategoriMap', 'metodeMap', 'lokasiOptions', 'editItem'));
+        return view('datalimbah.index', compact('items', 'kategoriOptions', 'subKategoriMap', 'metodeMap', 'lokasiOptions', 'editItem', 'search'));
     }
 
     public function update(Request $request, DataLimbah $data_limbah)
