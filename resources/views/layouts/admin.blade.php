@@ -63,9 +63,15 @@
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
                     <li class="nav-header">Website</li>
                     <li class="nav-item">
-                        <a href="https://dahanawastesolution.com/" class="nav-link" target="_blank" rel="noopener">
+                        <a href="https://dahanawastesolution.com/" class="nav-link"  rel="noopener">
                             <i class="nav-icon fas fa-globe"></i>
                             <p>Ke Website</p>
                         </a>
