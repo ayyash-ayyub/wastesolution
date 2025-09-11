@@ -55,6 +55,7 @@
                             <li><a class="menu-item" href="{{ route('frontend.kajian') }}">Kajian</a></li>
                             <li><a class="menu-item" href="{{ route('frontend.contact') }}">Contact</a></li>
                             <li><a class="menu-item" href="{{ route('frontend.data') }}">Data</a></li>
+                            <li><a class="menu-item" href="{{ route('frontend.mitra') }}">Mitra</a></li>
                             @auth
                                 <li class="d-lg-none"><a class="menu-item" href="{{ route('dashboard') }}">{{ auth()->user()->name }}</a></li>
                             @else

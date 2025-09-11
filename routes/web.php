@@ -106,6 +106,11 @@ Route::name('frontend.')->group(function () {
     Route::get('/projects.html', fn() => view('frontend.projects'));
     Route::get('/team', fn() => view('frontend.team'))->name('team');
     Route::get('/team.html', fn() => view('frontend.team'));
+    Route::get('/mitra', function () {
+        $mitras = \App\Models\MasterKemitraan::orderByDesc('id')->get();
+        return view('frontend.mitra', compact('mitras'));
+    })->name('mitra');
+    Route::get('/mitra.html', function(){ return redirect()->route('frontend.mitra'); });
     Route::get('/data', function () {
         // Summary counts
         $jumlahLimbah = DataLimbah::count();
